@@ -1,7 +1,13 @@
+import { Outlet } from "react-router-dom";
+
 export default function App() {
   return (
-    <main className="min-h-screen grid place-items-center bg-white">
-      <h1 className="text-4xl font-bold tracking-tight">Zane Website</h1>
-    </main>
+    <div>
+      {/* Navbar could go here later */}
+      <Outlet /> {/* 👈 this is where the child page (HomePage, etc.) will render */}
+      {/* Footer could go here later */}
+    </div>
   );
 }
+
+
