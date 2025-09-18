@@ -6,11 +6,11 @@ export default function HomePage() {
   const positions = [0.65, 0.69, 0.73, 0.77, 0.81, 0.84, 0.88, 0.91,0.94]
 
   const getY = (x) => {
-    // tweak numbers to match your curve
-    return (
-      242 + (100 - 242) * (x - 0.6) * 2 // linear approx of upward slope
-    )
-  }
+  const t = (x - 0.5) / 0.5
+
+  // cubic: start high, dip in middle, rise at end
+  return 250 - 90*t + 160*Math.pow(t,2) - 240*Math.pow(t,3)
+}
 
 return (
   <main className=" bg-[#fffbec]">
