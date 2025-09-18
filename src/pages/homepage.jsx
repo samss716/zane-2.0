@@ -9,7 +9,7 @@ export default function HomePage() {
   const t = (x - 0.5) / 0.5
 
   // cubic: start high, dip in middle, rise at end
-  return 250 - 90*t + 160*Math.pow(t,2) - 240*Math.pow(t,3)
+  return 250 - 90*t + 160*Math.pow(t,2) - 200*Math.pow(t,3)
 }
 
 return (
