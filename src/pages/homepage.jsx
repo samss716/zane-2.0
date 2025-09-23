@@ -11,17 +11,18 @@ export default function HomePage() {
         className="relative flex min-h-[45vh] items-center justify-center overflow-hidden"
       >
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
-          <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-center md:justify-between">
+          {/*adjusting gap for better spacing between ani and txt */}
+          <div className="flex flex-col items-center justify-center gap-25 md:flex-row md:items-center md:justify-between">
             {/* LEFT: 3D model */}
-            <div className="w-full md:w-[44%]">
+            <div className="w-full md:w-[60%]">
               <div className="h-[240px] md:h-[320px] overflow-hidden rounded-2xl shadow-sm">
-                {/* Set url to your real file, e.g., url="/robot.glb" */}
+                {/* Set url to your glb file"*/}
                 <ModelCanvas url="/lumiaabstract.glb" rotation={[0, 0.2, 0]} scale={1} interactive={false} />
               </div>
             </div>
 
             {/* RIGHT: Title */}
-            <div className="w-full text-center md:w-[52%] md:text-left">
+            <div className="w-full text-center md:w-[40%] md:text-left">
               <h1 className="font-bricolage text-5xl leading-[0.95] text-black md:text-6xl">
                 <LetterDrop text="Portfolio" delayStep={0.12} />
               </h1>
