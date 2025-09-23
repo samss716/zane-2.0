@@ -1,18 +1,28 @@
 // src/pages/homepage.jsx
+import LetterDrop from "../components/letter-ani.jsx";
+
 export default function HomePage() {
   return (
-    // pt-20 offsets the fixed <Navbar /> height so content isn't hidden
+    // pt-20 offsets the fixed Navbar
     <main className="relative min-h-screen bg-[#fffbec] pt-20">
-      {/* Hero Section */}
-      <section id="hero" className="relative border h-[40vh] flex flex-col items-center justify-center overflow-hidden">
-        <h1 className="font-bricolage text-6xl text-black">Portfolio</h1>
+      {/* Hero */}
+      <section
+        id="hero"
+        className="relative flex h-[40vh] flex-col items-center justify-center overflow-hidden"
+      >
+        <h1 className="font-bricolage text-6xl text-black">
+          <LetterDrop text="Portfolio" delayStep={0.08} />
+        </h1>
+        {/* optional subtext */}
+        {/* <p className="mt-3 text-gray-700">welcome to my work</p> */}
       </section>
+
       {/* Spacer / Intro */}
       <section className="flex h-[40vh] flex-col items-center justify-center">
         <p className="font-bricolage text-xl">Other content goes here…</p>
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section
         id="about"
         className="flex h-screen flex-col items-center justify-center bg-white"
@@ -21,12 +31,11 @@ export default function HomePage() {
           <h2 className="font-bricolage text-4xl">About Me</h2>
           <p className="mt-4 text-lg text-gray-700">
             Quick intro about who you are, your stack, and what you’re building.
-            You can replace this with cards, a timeline, or a short bio.
           </p>
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Portfolio */}
       <section
         id="portfolio"
         className="flex h-screen flex-col items-center justify-center bg-[#f5f5f5]"
@@ -34,12 +43,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
           <p className="mt-4 text-lg text-gray-700">
-            Showcase projects here—grid of cards, images, or embedded demos.
+            Showcase projects here—grid of cards, images, or demos.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact */}
       <section
         id="contact"
         className="flex h-[50vh] flex-col items-center justify-center bg-[#0099ff] text-white"
