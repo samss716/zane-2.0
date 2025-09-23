@@ -1,20 +1,36 @@
-// src/pages/homepage.jsx
 import LetterDrop from "../components/letter-ani.jsx";
+import ModelCanvas from "../components/glb-canvas.jsx";
 
 export default function HomePage() {
   return (
-    // pt-20 offsets the fixed Navbar
+    // pt-20 offsets your fixed Navbar
     <main className="relative min-h-screen bg-[#fffbec] pt-20">
-      {/* Hero */}
+      {/* HERO */}
       <section
         id="hero"
-        className="relative flex h-[40vh] flex-col items-center justify-center overflow-hidden"
+        className="relative flex min-h-[45vh] items-center justify-center overflow-hidden"
       >
-        <h1 className="font-bricolage text-6xl text-black">
-          <LetterDrop text="Portfolio" delayStep={0.08} />
-        </h1>
-        {/* optional subtext */}
-        {/* <p className="mt-3 text-gray-700">welcome to my work</p> */}
+        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
+          <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-center md:justify-between">
+            {/* LEFT: 3D model */}
+            <div className="w-full md:w-[44%]">
+              <div className="h-[240px] md:h-[320px] overflow-hidden rounded-2xl shadow-sm">
+                {/* Set url to your real file, e.g., url="/robot.glb" */}
+                <ModelCanvas url="/lumiaabstract.glb" rotation={[0, 0.2, 0]} scale={1} interactive={false} />
+              </div>
+            </div>
+
+            {/* RIGHT: Title */}
+            <div className="w-full text-center md:w-[52%] md:text-left">
+              <h1 className="font-bricolage text-5xl leading-[0.95] text-black md:text-6xl">
+                <LetterDrop text="Portfolio" delayStep={0.12} />
+              </h1>
+              <p className="mt-3 text-lg text-gray-700 opacity-90">
+                New Media Artist & Developer
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Spacer / Intro */}
@@ -61,7 +77,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="mt-auto bg-gray-900 py-6 text-center text-gray-300">
         <p className="text-sm">
           © {new Date().getFullYear()} Zane. All rights reserved.

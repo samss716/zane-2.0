@@ -1,4 +1,4 @@
-export default function LetterAni({ text, className = "", delayStep = 0.07 }) {
+export default function LetterAni({ text, className = "", delayStep = 0.12 }) {
   return (
     <span className={`drop-word ${className}`} aria-label={text}>
       {text.split("").map((ch, i) => (
