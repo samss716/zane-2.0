@@ -1,5 +1,6 @@
 import LetterDrop from "../components/letter-ani.jsx";
 import ModelCanvas from "../components/glb-canvas.jsx";
+import PortfolioPanels from "../components/portfolio-panels.jsx";
 
 export default function HomePage() {
   return (
@@ -42,7 +43,7 @@ export default function HomePage() {
       {/* About */}
       <section
         id="about"
-        className="flex h-screen flex-col items-center justify-center bg-white"
+        className="flex h-[40vh] flex-col items-center justify-center bg-white"
       >
         <div className="mx-auto max-w-4xl px-6 sm:px-8">
           <h2 className="font-bricolage text-4xl">About Me</h2>
@@ -55,13 +56,17 @@ export default function HomePage() {
       {/* Portfolio */}
       <section
         id="portfolio"
-        className="flex h-screen flex-col items-center justify-center bg-[#f5f5f5]"
+        className="flex min-h-screen flex-col items-center justify-center bg-[#f5f5f5]"
       >
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
+        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
           <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
-          <p className="mt-4 text-lg text-gray-700">
+          <p className="mt-3 text-lg text-gray-700">
             Showcase projects here—grid of cards, images, or demos.
           </p>
+        </div>
+
+        <div className="mt-8 w-full">
+        <PortfolioPanels />
         </div>
       </section>
 
