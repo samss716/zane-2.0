@@ -25,7 +25,7 @@ export default function ModelCanvas({
   url = "/lumiaabstract.glb",   // <-- set to your actual file in /public
   rotation = [0, 0.25, 0],
   scale = 1,
-  interactive = false,     // set true to allow drag rotation
+  interactive = true,     // set true to allow drag rotation
 }) {
   return (
     <Canvas camera={{ position: [0, 0, 3], fov: 35 }}>
@@ -40,7 +40,7 @@ export default function ModelCanvas({
         </Center>
       </Suspense>
 
-      {interactive ? <OrbitControls enableZoom={false} /> : null}
+      {interactive ? <OrbitControls enableZoom={true} /> : null}
     </Canvas>
   );
 }

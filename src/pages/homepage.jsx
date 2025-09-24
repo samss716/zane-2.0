@@ -1,6 +1,6 @@
 import LetterDrop from "../components/letter-ani.jsx";
 import ModelCanvas from "../components/glb-canvas.jsx";
-import PortfolioPanels from "../components/portfolio-panels.jsx";
+import PortfolioPanels from "../components/portfoliopanels.jsx";
 
 export default function HomePage() {
   return (
@@ -18,7 +18,7 @@ export default function HomePage() {
             <div className="w-full md:w-[60%]">
               <div className="h-[240px] md:h-[320px] overflow-hidden rounded-2xl shadow-sm">
                 {/* Set url to your glb file"*/}
-                <ModelCanvas url="/lumiaabstract.glb" rotation={[0, 0.2, 0]} scale={1} interactive={false} />
+                <ModelCanvas url="/lumiaabstract.glb" rotation={[0, 0.2, 0]} scale={1} interactive={true} />
               </div>
             </div>
 
@@ -40,35 +40,41 @@ export default function HomePage() {
         <p className="font-bricolage text-xl">Other content goes here…</p>
       </section>
 
-      {/* About */}
-      <section
-        id="about"
-        className="flex h-[40vh] flex-col items-center justify-center bg-white"
-      >
-        <div className="mx-auto max-w-4xl px-6 sm:px-8">
-          <h2 className="font-bricolage text-4xl">About Me</h2>
-          <p className="mt-4 text-lg text-gray-700">
-            Quick intro about who you are, your stack, and what you’re building.
-          </p>
-        </div>
-      </section>
+    {/* About */}
+    <section
+      id="about"
+      className="flex h-[40vh] flex-col md:flex-row-reverse px-10 items-center justify-center bg-white"
+    >
+      <img 
+        src="/media/pfp.jpg"
+          className="h-55 w-55 md:h-56 mdLw-56 rounded-full object-cover border shadow-sm transition-transform duration-300 ease-out motion-safe:hover:scale-110"
+          loading="lazy"/>
+
+      <div className="flex-1 max-w-4xl px-6 sm:px-8">
+      <h2 className="font-bricolage text-4xl">About Me</h2>
+        <p className="mt-4 text-lg text-gray-700">
+          Quick intro about who you are, your stack, and what you’re building.
+        </p>
+      </div>
+    </section>
 
       {/* Portfolio */}
-      <section
-        id="portfolio"
-        className="flex min-h-screen flex-col items-center justify-center bg-[#f5f5f5]"
-      >
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
-          <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
-          <p className="mt-3 text-lg text-gray-700">
-            Showcase projects here—grid of cards, images, or demos.
-          </p>
-        </div>
+<section
+  id="portfolio"
+  className="flex min-h-screen flex-col justify-center bg-[#f5f5f5]"
+>
+  <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
+    <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
+    <p className="mt-3 text-lg text-gray-700">
+      A few buckets of recent work.
+    </p>
+  </div>
 
-        <div className="mt-8 w-full">
-        <PortfolioPanels />
-        </div>
-      </section>
+  <div className="mt-8">
+    <PortfolioPanels />
+  </div>
+</section>
+
 
       {/* Contact */}
       <section
