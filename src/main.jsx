@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import HomePage from "./pages/homepage.jsx";
@@ -11,6 +11,9 @@ import{
   VideoWorks,
   Archive,
 } from "./components/placeholders.jsx"
+
+import TraditionalLayout from "./components/trad-layout.jsx";
+import CollectionStrip from "./components/trad-strip.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +35,16 @@ const router = createBrowserRouter([
           { path: "video-works", element: <VideoWorks /> },
           { path: "archive", element: <Archive /> },
         ]
-      }
+      },
+
+      {
+        path: "/traditional",
+        element: <TraditionalLayout />,
+        children: [
+          { index: true, element: <Navigate to ="portraits" replace /> },
+          { path: ":collection", element: <CollectionStrip /> },
+        ],
+      },
     ],
   },
 ]);

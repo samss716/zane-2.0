@@ -70,6 +70,7 @@ export default function PortfolioPanels() {
             tyStart="-120px"
             tyEnd="-80px"
             delay="160ms"
+            onClick={() => navigate("/traditional/portraits")}
           />
         </div>
       </div>
