@@ -2,6 +2,7 @@ import LetterDrop from "../components/letter-ani.jsx";
 import ModelCanvas from "../components/glb-canvas.jsx";
 import PortfolioPanels from "../components/portfoliopanels.jsx";
 
+
 export default function HomePage() {
   return (
     // pt-20 offsets your fixed Navbar
@@ -41,22 +42,33 @@ export default function HomePage() {
       </section>
 
     {/* About */}
-    <section
-      id="about"
-      className="flex h-[40vh] flex-col md:flex-row-reverse px-10 items-center justify-center bg-white"
-    >
-      <img 
+    <section id="about" className="bg-white">
+  <div className="mx-auto max-w-5xl px-6 sm:px-8 py-12 md:py-16">
+    <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-6 md:gap-10">
+      {/* Profile photo (on top for mobile, right for desktop) */}
+      <img
         src="/media/pfp.jpg"
-          className="h-55 w-55 md:h-56 mdLw-56 rounded-full object-cover border shadow-sm transition-transform duration-300 ease-out motion-safe:hover:scale-110"
-          loading="lazy"/>
+        alt="Portrait of Zane"
+        className="
+          h-40 w-40 md:h-56 md:w-56
+          rounded-full object-cover
+          border shadow-sm
+          transition-transform duration-300 ease-out
+          motion-safe:hover:scale-110
+        "
+        loading="lazy"
+      />
 
-      <div className="flex-1 max-w-4xl px-6 sm:px-8">
-      <h2 className="font-bricolage text-4xl">About Me</h2>
+      {/* Text */}
+      <div className="flex-1 text-center md:text-left">
+        <h2 className="font-bricolage text-4xl">About Me</h2>
         <p className="mt-4 text-lg text-gray-700">
           Quick intro about who you are, your stack, and what you’re building.
         </p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
       {/* Portfolio */}
 <section

@@ -1,7 +1,9 @@
 // src/components/portfoliopanels.jsx
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function portfoliopanels() {
+export default function PortfolioPanels() {
+  const navigate = useNavigate();
   const wrapperRef = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -35,20 +37,21 @@ export default function portfoliopanels() {
     <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
       <div
         ref={wrapperRef}
-        className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8"
+        className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10"
       >
         {/* Left free space for future animation */}
-        <div className="h-40 w-full shrink-0 rounded-2xl bg-transparent md:h-56 md:w-48 lg:w-64 xl:w-72" />
+        <div className="h-40 w-full shrink-0 rounded-2xl bg-transparent md:h-56 md:w-64 lg:w-80 xl:w-[26rem]" />
 
         {/* Cards row */}
-        <div className="flex w-full items-stretch justify-between gap-6 md:gap-8">
+        <div className="flex w-full items-stretch justify-between gap-6 md:gap-10">
           <Card
             title="green — 3D works / animations"
             bg="#BFD8B8"
             text="#0f1d14"
             inView={inView}
             tyStart="-120px"
-            tyEnd="64px"
+            tyEnd="80px"
+            onClick={() => navigate("/portfolio/3d-models")}
           />
           <Card
             title="orange — web designs"
@@ -65,7 +68,7 @@ export default function portfoliopanels() {
             text="#1c1330"
             inView={inView}
             tyStart="-120px"
-            tyEnd="-64px"
+            tyEnd="-80px"
             delay="160ms"
           />
         </div>
@@ -74,16 +77,17 @@ export default function portfoliopanels() {
   );
 }
 
-function Card({ title, bg, text, inView, tyStart, tyEnd, delay = "0ms" }) {
+function Card({ title, bg, text, inView, tyStart, tyEnd, delay = "0ms", onClick }) {
   return (
-    <div
+    <button
+      type="button"
+      onClick={onClick}
       className={[
-        "diag-panel",                 // animation base
-        inView ? "in" : "",           // toggle ON THE OUTER
-        "group flex-1 basis-0 max-w-[340px]",
-        "h-48 md:h-56 lg:h-64 rounded-2xl p-6",
+        "diag-panel", inView ? "in" : "",
+          "group flex-1 basis-0 max-w-[380px]",
+        "h-64 md:h-72 lg:h-80 rounded-2xl p-6",
         "shadow-sm ring-1 ring-black/5",
-        "transition-colors duration-200",
+        "transition-colors duration-200 text-left"
       ].join(" ")}
       style={{
         backgroundColor: bg,
@@ -101,6 +105,6 @@ function Card({ title, bg, text, inView, tyStart, tyEnd, delay = "0ms" }) {
           <p className="mt-2 text-sm text-black/60">click to explore</p>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
