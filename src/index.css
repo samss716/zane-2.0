@@ -40,44 +40,6 @@ body {
   }
 }
 
-/*portfolio section cards
- //Three-panel slide-in 
-.panel {
-  opacity: 0;
-  transform: translateY(0);
-  transition:
-    transform 700ms cubic-bezier(.2,.7,.2,1.05),
-    opacity 500ms ease-out,
-    background-color 200ms ease,
-    color 200ms ease;
-}
-
-.from-top {
-  transform: translateY(-48px);
-}
-.from-bottom {
-  transform: translateY(48px);
-}
-
- //When the wrapper decides we're in view, panels settle on the midline 
-.panel.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-// reduce-motion users get the content without animation 
-@media (prefers-reduced-motion: reduce) {
-  .panel,
-  .from-top,
-  .from-bottom,
-  .panel.in {
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
-*/
-
 /* Diagonal panels: entrance animation */
 .diag-panel {
   opacity: 0;
@@ -103,5 +65,47 @@ body {
     transform: none !important;
     opacity: 1 !important;
   }
+}
+
+/* Pink scrollbar for the traditional horizontal strip */
+.rect-pink-scroll {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #feb6cd transparent;
+}
+
+/* WebKit/Chromium */
+.rect-pink-scroll::-webkit-scrollbar {
+  height: 20px;        /* horizontal bar height */
+  width: 20px;         /* (in case of vertical) */
+  background: transparent;
+}
+
+/* Hide ALL arrow buttons explicitly */
+.rect-pink-scroll::-webkit-scrollbar-button,
+.rect-pink-scroll::-webkit-scrollbar-button:single-button,
+.rect-pink-scroll::-webkit-scrollbar-button:horizontal:increment,
+.rect-pink-scroll::-webkit-scrollbar-button:horizontal:decrement,
+.rect-pink-scroll::-webkit-scrollbar-button:vertical:increment,
+.rect-pink-scroll::-webkit-scrollbar-button:vertical:decrement {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Track + corner */
+.rect-pink-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.rect-pink-scroll::-webkit-scrollbar-corner {
+  background: transparent; /* avoids weird corner shapes */
+}
+
+/* Pink rectangular thumb (no pill) */
+.rect-pink-scroll::-webkit-scrollbar-thumb {
+  background: #feb6cd;
+}
+.rect-pink-scroll::-webkit-scrollbar-thumb:hover {
+  background: #e591ac;
 }
 

@@ -23,18 +23,16 @@ return (
       <h2 className="mb-4 font-bricolage text-xl text-gray-800">{title}</h2>
 
       {/* This wrapper clamps width to the white container and hides any bleed */}
-      <div className="w-full min-w-0 overflow-hidden">
+      <div className="w-full min-w-0 overflow-hidden ">
         {/* Only THIS element scrolls horizontally */}
         <div
           className="
             w-full max-w-full min-w-0
             overflow-x-auto overflow-y-hidden overscroll-x-contain
             snap-x snap-mandatory
-            flex gap-6
-            rounded-xl border bg-gray-50
-            p-5 md:p-6
+            flex gap-6 p-5 md:p-6
             scroll-px-5 md:scroll-px-6
-            scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent
+            rect-pink-scroll
           "
           style={{ scrollBehavior: "smooth" }}
         >
