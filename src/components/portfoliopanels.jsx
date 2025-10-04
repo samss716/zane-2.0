@@ -61,6 +61,7 @@ export default function PortfolioPanels() {
             tyStart="120px"
             tyEnd="0px"
             delay="80ms"
+            onClick={() => navigate("/web-design")}
           />
           <Card
             title="lavender — traditional works"

@@ -101,11 +101,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="mt-auto bg-gray-900 py-6 text-center text-gray-300">
-        <p className="text-sm">
-          © {new Date().getFullYear()} Zane. All rights reserved.
-        </p>
-      </footer>
     </main>
   );
 }

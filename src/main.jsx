@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App.jsx";
 import HomePage from "./pages/homepage.jsx";
 import Portfolio from "./pages/portfolio.jsx";
+import WebDesign from "./pages/webdesigns.jsx";
 import{
   ThreeDModels,
   Simulations,
@@ -45,6 +46,8 @@ const router = createBrowserRouter([
           { path: ":collection", element: <CollectionStrip /> },
         ],
       },
+
+      { path: "/web-design", element: <WebDesign /> },
     ],
   },
 ]);
