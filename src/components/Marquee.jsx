@@ -1,38 +1,26 @@
-// src/components/Marquee.jsx
-function OutlinedWord({ text = "explore my digital archive" }) {
-  return (
-    <svg className="h-12 md:h-16 lg:h-20" viewBox="0 0 2200 120" preserveAspectRatio="xMinYMid meet">
-      <text
-        x="0" y="90"
-        fontFamily="Bricolage Grotesque, system-ui, sans-serif"
-        fontSize="90"
-        stroke="#111"          // outline color
-        strokeWidth="2"        // outline thickness
-        fill="transparent"     // or set to "#fff" for filled outline
-        style={{ paintOrder: "stroke fill" }}
-      >
-        {text}
-      </text>
-    </svg>
-  );
-}
-
-export default function Marquee({ text = "explore my digital archive", className = "", speed = "40s", gap = "1rem" }) {
+export default function Marquee({
+  text = "explore my digital archive",
+  className = "",
+}) {
+  // Build one chunk of repeated text
   const Chunk = () => (
-    <div className="flex items-center gap-3 whitespace-nowrap">
+    <div className="flex items-center gap-12 whitespace-nowrap">
       {Array.from({ length: 4 }).map((_, i) => (
-        <OutlinedWord key={i} text={text} />
+        <span
+          key={i}
+          className="font-bricolage tracking-tight text-3xl md:text-4xl lg:text-5xl"
+        >
+          {text}
+        </span>
       ))}
     </div>
   );
 
   return (
-    <section className={`marquee relative overflow-hidden ${className}`}
-    style={{ ["--speed"]: speed, ["--gap"]: gap }}
-    >
+    <section className={`marquee relative overflow-hidden ${className}`}>
       <div className="marquee__track">
         <Chunk />
-        <Chunk />
+        <Chunk /> {/* duplicate for seamless loop */}
       </div>
     </section>
   );
