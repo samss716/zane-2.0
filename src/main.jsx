@@ -1,20 +1,21 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-import HomePage from "./pages/homepage.jsx";
-import Portfolio from "./pages/portfolio.jsx";
-import WebDesign from "./pages/webdesigns.jsx";
+import HomePage from "./pages/Homepage.jsx";
+import Portfolio from "./pages/Portfolio.jsx";
+import WebDesign from "./pages/WebDesigns.jsx";
 import{
-  ThreeDModels,
   Simulations,
   VideoWorks,
   Archive,
-} from "./components/placeholders.jsx"
+} from "./components/PlaceHolders.jsx"
 
-import TraditionalLayout from "./components/trad-layout.jsx";
-import CollectionStrip from "./components/trad-strip.jsx";
+import TraditionalLayout from "./components/TradLayout.jsx";
+import CollectionStrip from "./components/TradStrip.jsx";
+
+const ThreeDModelsPage = lazy(() => import("./pages/ThreeDModels.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,8 @@ const router = createBrowserRouter([
         path: "/portfolio",
         element: <Portfolio />,
         children:[
-          { index: true,element: <ThreeDModels /> }, //default tab
-          { path: "3d-models", element: <ThreeDModels /> },
+          { index: true,element: <ThreeDModelsPage /> }, //default tab
+          { path: "3d-models", element: <ThreeDModelsPage /> },
           { path: "simulations", element: <Simulations /> },
           { path: "video-works", element: <VideoWorks /> },
           { path: "archive", element: <Archive /> },
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+     <Suspense fallback={<div className="p-6">Loading…</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </StrictMode>
 );

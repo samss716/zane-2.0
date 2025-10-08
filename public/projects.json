@@ -1,0 +1,34 @@
+[
+  {
+    "id": "p1",
+    "title": "mini-robos",
+    "src": "/media/3dmodels/robots_slowed.mp4",
+    "description": "Blender model of conveyor belt with modeled robots.",
+    "medium": "3D (video export)",
+    "year": "2024"
+  },
+  {
+    "id": "p2",
+    "title": "robot.mp4",
+    "src": "/media/3dmodels/robot.mp4",
+    "description": "3d modeled robot with textures.",
+    "medium": "3D (video export)",
+    "year": "2024"
+  },
+  {
+    "id": "p3",
+    "title": "jellyfish.mp4",
+    "src": "/media/3dmodels/jellyfish.mp4",
+    "description": "3d modeled Jellyfish with turbulance physics and shaders.",
+    "medium": "3D (video export)",
+    "year": "2023"
+  },
+  {
+    "id": "p3",
+    "title": "fire-particles.mp4",
+    "src": "/media/3dmodels/fire-particles.mp4",
+    "description": "Fluid Simulation of particle system reflecting fire themes.",
+    "medium": "3D (video export)",
+    "year": "2024"
+  }
+]

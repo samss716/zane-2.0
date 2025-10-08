@@ -1,6 +1,7 @@
-import LetterDrop from "../components/letter-ani.jsx";
-import ModelCanvas from "../components/glb-canvas.jsx";
-import PortfolioPanels from "../components/portfoliopanels.jsx";
+import LetterDrop from "../components/LetterAni.jsx";
+import ModelCanvas from "../components/GlbCanvas.jsx";
+import Marquee from "../components/Marquee.jsx";
+import PortfolioPanels from "../components/PortfolioPanels.jsx";
 
 
 export default function HomePage() {
@@ -36,9 +37,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Spacer / Intro */}
-      <section className="flex h-[40vh] flex-col items-center justify-center">
-        <p className="font-bricolage text-xl">Other content goes here…</p>
+      {/* Marquee / Intro */}
+      <section className="py-10">
+        <div className="mx-auto w-full max-w-6xl px-0 sm:px-0 lg:px-0">
+        <Marquee className="bg-[#fffbec] py-6" />
+        </div>
       </section>
 
     {/* About */}
