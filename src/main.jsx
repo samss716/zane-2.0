@@ -5,17 +5,14 @@ import "./index.css";
 import App from "./App.jsx";
 import HomePage from "./pages/Homepage.jsx";
 import Portfolio from "./pages/Portfolio.jsx";
-import WebDesign from "./pages/WebDesigns.jsx";
-import{
-  Simulations,
-  VideoWorks,
-  Archive,
-} from "./components/PlaceHolders.jsx"
-
 import TraditionalLayout from "./components/TradLayout.jsx";
 import CollectionStrip from "./components/TradStrip.jsx";
+import WebDesign from "./pages/WebDesigns.jsx";
 
 const ThreeDModelsPage = lazy(() => import("./pages/ThreeDModels.jsx"));
+const SimulationsPage = lazy(() => import("./pages/Simulations.jsx"));
+const VideoWorksPage = lazy(() => import("./pages/VideoWorks.jsx"));
+const ArchivePage = lazy(() => import("./pages/Archive.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -33,9 +30,9 @@ const router = createBrowserRouter([
         children:[
           { index: true,element: <ThreeDModelsPage /> }, //default tab
           { path: "3d-models", element: <ThreeDModelsPage /> },
-          { path: "simulations", element: <Simulations /> },
-          { path: "video-works", element: <VideoWorks /> },
-          { path: "archive", element: <Archive /> },
+          { path: "simulations", element: <SimulationsPage /> },
+          { path: "video-works", element: <VideoWorksPage /> },
+          { path: "archive", element: <ArchivePage /> },
         ]
       },
 

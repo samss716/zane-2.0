@@ -8,13 +8,18 @@ export default function Portfolio() {
         id="portfolio-hero"
         className="relative flex h-[35vh] items-center justify-center bg-[#f5f5f5]"
       >
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">
-            Portfolio
-          </h1>
-          <p className="mt-3 text-gray-600">
-            (animation slot — replace this section later)
-          </p>
+        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
+           <div className="overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
+            <video
+              className="h-[35vh] md:h-[50vh] w-full object-cover"
+              src="/media/3dmodels/soundwaves.mp4" 
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
+          </div>
         </div>
       </section>
 

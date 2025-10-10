@@ -5,7 +5,8 @@
     "src": "/media/3dmodels/robots_slowed.mp4",
     "description": "Blender model of conveyor belt with modeled robots.",
     "medium": "3D (video export)",
-    "year": "2024"
+    "year": "2024",
+    "collection": "3d"
   },
   {
     "id": "p2",
@@ -13,7 +14,8 @@
     "src": "/media/3dmodels/robot.mp4",
     "description": "3d modeled robot with textures.",
     "medium": "3D (video export)",
-    "year": "2024"
+    "year": "2024",
+    "collection": "3d"
   },
   {
     "id": "p3",
@@ -21,14 +23,16 @@
     "src": "/media/3dmodels/jellyfish.mp4",
     "description": "3d modeled Jellyfish with turbulance physics and shaders.",
     "medium": "3D (video export)",
-    "year": "2023"
+    "year": "2023",
+    "collection": "3d"
   },
   {
-    "id": "p3",
+    "id": "p4",
     "title": "fire-particles.mp4",
-    "src": "/media/3dmodels/fire-particles.mp4",
+    "src": "/media/simulations/fire-particles.mp4",
     "description": "Fluid Simulation of particle system reflecting fire themes.",
     "medium": "3D (video export)",
-    "year": "2024"
+    "year": "2024",
+    "collection": "sim"
   }
 ]
