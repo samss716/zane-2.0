@@ -1,0 +1,65 @@
+[
+  {
+    "id": "p1",
+    "title": "mini-robos",
+    "src": "/media/3dmodels/robots_slowed.mp4",
+    "description": "Blender model of conveyor belt with modeled robots.",
+    "medium": "3D (video export)",
+    "year": "2024",
+    "collection": "3d"
+  },
+  {
+    "id": "p2",
+    "title": "robot",
+    "src": "/media/3dmodels/robot.mp4",
+    "description": "3d modeled robot with textures.",
+    "medium": "3D (video export)",
+    "year": "2024",
+    "collection": "3d"
+  },
+  {
+    "id": "p3",
+    "title": "jellyfish",
+    "src": "/media/3dmodels/jellyfish.mp4",
+    "description": "3d modeled Jellyfish with turbulance physics and shaders.",
+    "medium": "3D (video export)",
+    "year": "2023",
+    "collection": "3d"
+  },
+  {
+    "id": "s1",
+    "title": "fire-particles",
+    "src": "/media/simulations/fire-particles.mp4",
+    "description": "Fluid Simulation of particle system reflecting fire themes.",
+    "medium": "3D (video export)",
+    "year": "2024",
+    "collection": "sim"
+  },
+  {
+    "id": "s2",
+    "title": "blue-orb-1",
+    "src": "/media/simulations/blue-orb-1.mp4",
+    "description": "Fluid Simulation of particle system shaping a blue orb.",
+    "medium": "3D (video export)",
+    "year": "2023",
+    "collection": "sim"
+  },
+  {
+    "id": "s3",
+    "title": "bubbles",
+    "src": "/media/simulations/bubbles-official.mp4",
+    "description": "Physics Simulation of particle system and HRDI to reflect of bubble animation.",
+    "medium": "3D (video export)",
+    "year": "2023",
+    "collection": "sim"
+  },
+  {
+    "id": "s4",
+    "title": "decahedrons",
+    "src": "/media/simulations/decahedron.mp4",
+    "description": "Fluid Simulation of particle system of decahedron shape. Created in complement with Arduino Uno Led Responsive Light Project.",
+    "medium": "3D (video export)",
+    "year": "2024",
+    "collection": "sim"
+  }
+]

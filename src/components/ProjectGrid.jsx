@@ -1,7 +1,7 @@
 // src/components/ProjectGrid.jsx
 import { useEffect, useState, useRef } from "react";
 
-export default function ProjectGrid({ dataUrl = "/projects.json", collection }) {
+export default function ProjectGrid({ dataUrl = "/data/projects.json", collection }) {
   const [items, setItems] = useState([]);
   const [err, setErr] = useState("");
 

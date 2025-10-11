@@ -1,0 +1,51 @@
+[
+  {
+    "id": "t1",
+    "title": "Figure Study 01",
+    "src": "/media/traditional/figure-studies/2-29.jpg",
+    "year": 2024,
+    "collection": "figure-studies"
+  },
+  {
+    "id": "t2",
+    "title": "Figure Study 02",
+    "src": "/media/traditional/figure-studies/20min.jpg",
+    "year": 2024,
+    "collection": "figure-studies"
+  },
+  {
+    "id": "t3",
+    "title": "Figure Study 03",
+    "src": "/media/traditional/figure-studies/face2.jpg",
+    "year": 2024,
+    "collection": "figure-studies"
+  },
+  {
+    "id": "t4",
+    "title": "Figure Study 04",
+    "src": "/media/traditional/figure-studies/gesture.jpg",
+    "year": 2024,   
+    "collection": "figure-studies"
+  },
+  {
+    "id": "t5",
+    "title": "Figure Study 05",
+    "src": "/media/traditional/figure-studies/img-face.jpg",
+    "year": 2024,
+    "collection": "figure-studies"
+  },
+  {
+    "id": "m1",
+    "title": "Milk Series 01",
+    "src": "/media/traditional/milk-series/milk-series01.jpg",
+    "year": 2023,
+    "collection": "milk-collection"
+  },
+  {
+    "id": "m2",
+    "title": "Milk Series 02",
+    "src": "/media/traditional/milk-series/milk-series02.jpg",
+    "year": 2023,
+    "collection": "milk-collection"
+  }
+]

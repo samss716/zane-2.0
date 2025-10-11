@@ -1,0 +1,21 @@
+[
+  {
+    "id": "w1",
+    "title": "Interior Design",
+    "thumb": "/media/web/figma-1.png",
+    "href": "https://www.figma.com/proto/FCwTvnVNewdbnHicRHK0qK/Artist-Website?node-id=6-3&starting-point-node-id=6%3A3&t=zaFmp1TWN6fl8GLV-1",           
+    "type": "image"   
+  },
+  {
+    "id": "w2",
+    "title": "The Press",
+    "thumb": "/media/web/figma-2.png",
+    "type": "image"
+  },
+  {
+    "id": "w3",
+    "title": "New Media Cooperative",
+    "thumb": "/media/web/nmc.png",
+    "type": "image"
+  }
+]
