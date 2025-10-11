@@ -21,16 +21,25 @@ export default function WebDesign() {
   return (
     <main className="relative min-h-screen bg-white pt-20">
       {/* Hero */}
-      <section className="relative flex h-[30vh] items-center justify-center bg-[#f5f5f5]">
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">
-            Web Design
-          </h1>
-          <p className="mt-3 text-gray-600">
-            case studies & interactive prototypes (placeholders for now)
-          </p>
-        </div>
-      </section>
+<section className="relative isolate flex h-[30vh] items-center justify-center overflow-hidden bg-[#f5f5f5]">
+  {/* Background image (on top of the bg color, behind text) */}
+  <img
+    src="/media/web/cafe.jpg"      // make sure this is under /public/media/web/
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 z-0 h-full w-full object-cover"
+  />
+
+  {/* Optional overlay for readability */}
+  <div className="absolute inset-0 z-[1] bg-black/10" />
+
+  {/* Text */}
+  <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 text-center">
+    <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">Web Design</h1>
+    <p className="mt-3 text-gray-50 drop-shadow">case studies & interactive prototypes</p>
+  </div>
+</section>
+
 
       {/* Grid */}
       <section className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 py-10">

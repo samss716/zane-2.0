@@ -1,30 +1,49 @@
 // src/components/ContactSection.jsx
-import Marquee from "./Marquee"; // reuse your marquee component
+import Marquee from "./Marquee";
 
 export default function ContactSection() {
-  // Generate a QR PNG from your IG profile link (reliable)
-const instagramUrl = "https://www.instagram.com/samdigikive?igsh=YjJhbHZ5czc5b2Fy&utm_source=qr";
+  // Your social link
+  const instagramUrl =
+    "https://www.instagram.com/samdigikive?igsh=YjJhbHZ5czc5b2Fy&utm_source=qr";
 
-const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=png&data=${encodeURIComponent(
-  instagramUrl
-)}`;
+  // Reliable QR PNG from the URL
+  const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=png&data=${encodeURIComponent(
+    instagramUrl
+  )}`;
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#fffbec] py-16 lg:py-20">
-      {/* BACKGROUND MARQUEE (stays behind) */}
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-15">
-        <Marquee text="connect with me" className="h-full" />
+    <section
+      id="contact"
+      className="relative isolate overflow-hidden bg-[#fffbec] py-16 lg:py-20"
+    >
+      {/* BACKGROUND: marquee sits underneath via -z-10 */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <Marquee
+          text="connect with me"
+          className="h-full w-full opacity-20 tracking-[.2em]"
+          aria-hidden
+        />
+        {/* Soft center fade so the marquee peeks mostly at the sides */}
+        <div
+          className="absolute inset-0"
+          // radial fade from solid bg in the center to transparent at edges
+          // tweak the 42%/65% stops to expand/contract the clear center
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(255,251,236,1) 0%, rgba(255,251,236,1) 42%, rgba(255,251,236,0) 65%)",
+          }}
+        />
       </div>
 
       {/* FOREGROUND CONTENT */}
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
-        <h2 className="text-center font-bricolage text-3xl md:text-4xl tracking-tight mb-8">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
+        <h2 className="mb-8 text-center font-bricolage text-3xl md:text-4xl tracking-tight">
           Social
         </h2>
 
         {/* Video + QR layout */}
         <div className="grid items-center gap-8 md:grid-cols-[1fr_minmax(320px,2fr)_1fr]">
-          {/* (Optional) left QR on large screens */}
+          {/* Left QR */}
           <a
             href={instagramUrl}
             target="_blank"
@@ -33,17 +52,17 @@ const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=p
             aria-label="Open Instagram"
           >
             <img
-                src={qrImg}
-                alt="Instagram QR code"
-                className="h-40 w-40 object-contain opacity-85"
-              />
+              src={qrImg}
+              alt="Instagram QR code"
+              className="h-40 w-40 object-contain opacity-90"
+            />
           </a>
 
           {/* Center video */}
-          <div className="overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
+          <div className="relative z-10 overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
             <video
               className="h-[240px] w-full object-cover md:h-[360px]"
-              src="/media/sams.mp4"      // <-- your video path
+              src="/media/sams.mp4"
               autoPlay
               muted
               loop
@@ -52,7 +71,7 @@ const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=p
             />
           </div>
 
-          {/* Right QR on large screens */}
+          {/* Right QR */}
           <a
             href={instagramUrl}
             target="_blank"
@@ -64,13 +83,13 @@ const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=p
               <img
                 src={qrImg}
                 alt="Instagram QR code"
-                className="h-40 w-40 object-contain opacity-85"
+                className="h-40 w-40 object-contain opacity-90"
               />
             </div>
           </a>
         </div>
 
-        {/* Single QR for mobile (stacks below the video) */}
+        {/* Mobile-only single QR (stacks below video) */}
         <div className="mt-8 flex justify-center md:hidden">
           <a
             href={instagramUrl}
@@ -82,7 +101,7 @@ const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=p
             <img
               src={qrImg}
               alt="Instagram QR code"
-              className="h-40 w-40 object-contain opacity-85"
+              className="h-40 w-40 object-contain opacity-90"
             />
           </a>
         </div>
@@ -90,4 +109,3 @@ const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=p
     </section>
   );
 }
-

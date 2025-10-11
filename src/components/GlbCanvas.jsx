@@ -36,7 +36,7 @@ export default function ModelCanvas({
         <Center>
           <GLB url={url} rotation={rotation} scale={scale} />
           <ContactShadows position={[0, -0.9, 0]} opacity={0.2} blur={1.8} far={3} />
-          <Environment preset="city" />
+          <Environment preset="studio" />
         </Center>
       </Suspense>
 

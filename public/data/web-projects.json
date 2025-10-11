@@ -10,12 +10,14 @@
     "id": "w2",
     "title": "The Press",
     "thumb": "/media/web/figma-2.png",
+    "href": "https://www.figma.com/design/rWoieTo061NmCs1eLBC0q0/The-Press?t=a4k6JwHpA7R5AsQy-1",
     "type": "image"
   },
   {
     "id": "w3",
     "title": "New Media Cooperative",
     "thumb": "/media/web/nmc.png",
+    "href": "https://newmediacooperative.com/index.html",
     "type": "image"
   }
 ]
