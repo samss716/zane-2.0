@@ -9,7 +9,7 @@ export default function Portfolio() {
         className="relative flex h-[35vh] items-center justify-center bg-[#f5f5f5]"
       >
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
-           <div className="overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
+           <div className="relative overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5 mb-4">
             <video
               className="h-[35vh] md:h-[50vh] w-full object-cover"
               src="/media/3dmodels/soundwaves.mp4" 
@@ -19,12 +19,13 @@ export default function Portfolio() {
               playsInline
               preload="metadata"
             />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-b from-transparent to-white" />
           </div>
         </div>
       </section>
 
       {/* Page-local nav (tabs) */}
-      <div className="sticky top-16 z-40 border-b bg-white/90 backdrop-blur">
+      <div className="sticky top-16 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-sm">
         <nav className="mx-auto flex max-w-6xl items-center gap-6 px-6 sm:px-8 lg:px-12 h-12">
           <Tab to="/portfolio/3d-models" label="3D Models" />
           <Tab to="/portfolio/simulations" label="Simulations" />

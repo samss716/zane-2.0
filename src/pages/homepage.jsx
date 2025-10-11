@@ -2,6 +2,7 @@ import LetterDrop from "../components/LetterAni.jsx";
 import ModelCanvas from "../components/GlbCanvas.jsx";
 import Marquee from "../components/Marquee.jsx";
 import PortfolioPanels from "../components/PortfolioPanels.jsx";
+import Contact from "../components/Contact.jsx";
 
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
       {/* HERO */}
       <section
         id="hero"
-        className="relative flex min-h-[45vh] items-center justify-center overflow-hidden"
+        className="scroll-mt-20 relative flex min-h-[45vh] items-center justify-center overflow-hidden"
       >
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
           {/*adjusting gap for better spacing between ani and txt */}
@@ -45,7 +46,7 @@ export default function HomePage() {
       </section>
 
     {/* About */}
-    <section id="about" className="bg-white">
+    <section id="about" className="scroll-mt-20 bg-white">
   <div className="mx-auto max-w-5xl px-6 sm:px-8 py-12 md:py-16">
     <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-6 md:gap-10">
       {/* Profile photo (on top for mobile, right for desktop) */}
@@ -76,7 +77,7 @@ export default function HomePage() {
       {/* Portfolio */}
 <section
   id="portfolio"
-  className="flex min-h-screen flex-col justify-center bg-[#f5f5f5]"
+  className="scroll-mt-20 flex min-h-screen flex-col justify-center bg-[#f5f5f5]"
 >
   <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
     <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
@@ -92,17 +93,11 @@ export default function HomePage() {
 
 
       {/* Contact */}
-      <section
-        id="contact"
-        className="flex h-[50vh] flex-col items-center justify-center bg-[#0099ff] text-white"
-      >
-        <div className="mx-auto max-w-4xl px-6 sm:px-8 text-center">
-          <h2 className="font-bricolage text-4xl">Contact</h2>
-          <p className="mt-3 text-lg opacity-90">
-            Drop a line or add your social links here.
-          </p>
-        </div>
-      </section>
+      <Contact
+        videoSrc="/media/sams.mp4"
+        leftQR="/media/qr/instagram.png"               // your QR asset(s)
+        rightQR="/media/qr/instagram.png"
+      />
 
     </main>
   );
