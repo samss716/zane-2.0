@@ -61,5 +61,15 @@
     "medium": "3D (video export)",
     "year": "2024",
     "collection": "sim"
+  },
+
+  {
+    "id": "v1",
+    "title": "3j",
+    "src": "/media/video/3j.mp4",
+    "description": "Rotoscope animation created in Photoshop.",
+    "medium": "Photoshop Rotoscope",
+    "year": "2021",
+    "collection": "video"
   }
 ]
