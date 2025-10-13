@@ -45,7 +45,7 @@ export default function PortfolioPanels() {
         {/* Cards row */}
         <div className="flex w-full items-stretch justify-between gap-6 md:gap-10">
           <Card
-            title="green — 3D works / animations"
+            title="3D Works & Animations"
             bg="#BFD8B8"
             text="#0f1d14"
             inView={inView}
@@ -54,7 +54,7 @@ export default function PortfolioPanels() {
             onClick={() => navigate("/portfolio/3d-models")}
           />
           <Card
-            title="orange — web designs"
+            title="Web Designs & Projects"
             bg="#FECBA1"
             text="#2b1400"
             inView={inView}
@@ -64,7 +64,7 @@ export default function PortfolioPanels() {
             onClick={() => navigate("/web-design")}
           />
           <Card
-            title="lavender — traditional works"
+            title="Traditional Works"
             bg="#E6E1FF"
             text="#1c1330"
             inView={inView}

@@ -157,12 +157,12 @@ export default function HomePage() {
       {/* Portfolio */}
 <section
   id="portfolio"
-  className="scroll-mt-20 flex min-h-screen flex-col justify-center bg-[#f5f5f5]"
+  className="scroll-mt-20 flex min-h-screen flex-col justify-center bg-[#fffbec]"
 >
   <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
     <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
     <p className="mt-3 text-lg text-gray-700">
-      A few buckets of recent work.
+      Explore my recent works!
     </p>
   </div>
 
