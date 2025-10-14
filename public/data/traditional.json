@@ -23,14 +23,28 @@
   {
     "id": "t4",
     "title": "Figure Study 04",
-    "src": "/media/traditional/figure-studies/gesture.jpg",
-    "year": 2024,   
+    "src": "/media/traditional/figure-studies/hands.jpg",
+    "year": 2024,
     "collection": "figure-studies"
   },
   {
     "id": "t5",
     "title": "Figure Study 05",
+    "src": "/media/traditional/figure-studies/gesture.jpg",
+    "year": 2024,   
+    "collection": "figure-studies"
+  },
+  {
+    "id": "t6",
+    "title": "Figure Study 06",
     "src": "/media/traditional/figure-studies/img-face.jpg",
+    "year": 2024,
+    "collection": "figure-studies"
+  },
+  {
+    "id": "t7",
+    "title": "Figure Study 07",
+    "src": "/media/traditional/figure-studies/body.jpg",
     "year": 2024,
     "collection": "figure-studies"
   },

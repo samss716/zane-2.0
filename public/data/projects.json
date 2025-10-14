@@ -12,7 +12,7 @@
     "id": "p2",
     "title": "robot",
     "src": "/media/3dmodels/robot.mp4",
-    "description": "3d modeled robot with textures.",
+    "description": "Textures created with use of HDRIs and other shader properties to create rough surface and screen. Axis applied and parented to control wheel movement. Rendered in Cycles.",
     "medium": "3D (video export)",
     "year": "2024",
     "collection": "3d"
@@ -21,7 +21,16 @@
     "id": "p3",
     "title": "jellyfish",
     "src": "/media/3dmodels/jellyfish.mp4",
-    "description": "3d modeled Jellyfish with turbulance physics and shaders.",
+    "description": "Created with Turbulance physics to create motion of jellyfish legs. Shaders applied to create stripped attributes. Rendered with Eevee.",
+    "medium": "3D (video export)",
+    "year": "2023",
+    "collection": "3d"
+  },
+   {
+    "id": "p4",
+    "title": "fire",
+    "src": "/media/3dmodels/fire.mp4",
+    "description": "Constructed geometry for log and rock base. Flames created through emission shaders and physic property manipulation. Rendered with Eevee.. Shaders applied to create stripped attributes. Rendered with Eevee.",
     "medium": "3D (video export)",
     "year": "2023",
     "collection": "3d"
@@ -39,7 +48,7 @@
     "id": "s2",
     "title": "blue-orb-1",
     "src": "/media/simulations/blue-orb-1.mp4",
-    "description": "Fluid Simulation of particle system shaping a blue orb.",
+    "description": "Particle Simulation created through use of an instance object, an emitter object, and an added particle system. A turbulance force field was utilizated along with ajusted physics settings. Rendered with Eevee.",
     "medium": "3D (video export)",
     "year": "2023",
     "collection": "sim"
@@ -57,7 +66,7 @@
     "id": "s4",
     "title": "decahedrons",
     "src": "/media/simulations/decahedron.mp4",
-    "description": "Fluid Simulation of particle system of decahedron shape. Created in complement with Arduino Uno Led Responsive Light Project.",
+    "description": "Created with a Geodesic Dome instance object and plane geometry as the particle emitter. Vornoi Shader editors to add evolving design. Rendered in Cycles. Created in conjunction with 3D modeled Geodesic Domes and Arduino programmed LED strip to reflect the concept of unity and interconnectedness.",
     "medium": "3D (video export)",
     "year": "2024",
     "collection": "sim"
@@ -71,5 +80,42 @@
     "medium": "Photoshop Rotoscope",
     "year": "2021",
     "collection": "video"
+  },
+  {
+    "id": "v2",
+    "title": "ai-epoch.mp4",
+    "src": "/media/video/ai-epoch.mp4",
+    "description": "Created with AI code manipulated using Google Notebook. I explore prompts of environmental decay and the merging of technology and the natural world.",
+    "medium": "Google Notebook AI",
+    "year": "2022",
+    "collection": "video"
+  },
+  {
+    "id": "v3",
+    "title": "ascii-vid.mp4",
+    "src": "/media/video/ascii-vid.mp4",
+    "description": "Created through use of a blender shader system that takes string input converted with colorramps to effect the shading of the iamge. Utilization of found footage. This piece was made to reflect feelings of eerie nostalgia.",
+    "medium": "Blender Shaders",
+    "year": "2023",
+    "collection": "video"
+  },
+  {
+    "id": "v4",
+    "title": "Lumia-2024-final.mp4",
+    "src": "/media/video/Lumia-2024-final.mp4",
+    "description": "A piece that reflects on the ever-evolving nature of technology. Made in collaboration with UNT's Composers Forum.",
+    "medium": "Multimedia",
+    "year": "2023",
+    "collection": "video"
+  },
+
+  {
+    "id": "a1",
+    "title": "16mm.mp4",
+    "src": "/media/archive/16mm.mp4",
+    "description": "Created with various spliced 16mm film strips that have been manually drawn on and manipulated.",
+    "medium": "Spliced 16mm",
+    "year": "2021",
+    "collection": "archive"
   }
 ]
