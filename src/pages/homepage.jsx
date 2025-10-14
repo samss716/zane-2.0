@@ -91,83 +91,89 @@ export default function HomePage() {
         </p>
       </div>
 
-    <aside className="order-3 md:top-24">
-      <img
-        src="/media/pfp.jpg"
-        alt="Headshot of Zane"
-        className="
-        h-44 w-44 md:h-46 md:w-46
-        rounded-xl object-cover
-        border shadow-sm
-        transition-transform duration-300 ease-out
-        motion-safe:hover:scale-110
-        "
-        loading="lazy"
-      />
+    <aside className="order-3 mt-8 md:mt-0 md:sticky md:top-24">
+  <div className="flex flex-col items-center text-center md:items-start md:text-left">
+    <img
+      src="/media/pfp.jpg"
+      alt="Headshot of Zane"
+      className="h-44 w-44 md:h-[11.5rem] md:w-[11.5rem] rounded-xl object-cover border shadow-sm"
+      loading="lazy"
+    />
 
-        {/* Text */}
-        <div className="mt-3 text-md text-gray-700">
-          <div className="font-medium text-gray-900">Zane</div>
-          <div>web / creative tech</div>
-        </div>
-      
-      {/* socials (placeholders: add your hrefs) */}
-        <div className="mt-4 flex items-center gap-3">
-          {/* Main/site icon */}
-          <a href="https://your-site.example" target="_blank" rel="noopener noreferrer"
-             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5">
-            {/* globe icon */}
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
-              <path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M7 5.5c3 .8 7 .8 10 0M7 18.5c3-.8 7-.8 10 0" />
-            </svg>
-          </a>
+    <div className="mt-3 text-md text-gray-700">
+      <div className="font-medium text-gray-900">Zane</div>
+      <div>web / creative tech</div>
+    </div>
 
-          {/* X / Twitter */}
-          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
-             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5">
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-              <path d="M18.146 2H21l-6.487 7.41L22 22h-6.8l-4.91-6.39L4.56 22H2l6.94-7.93L2 2h6.8l4.57 5.94L18.146 2Zm-1.19 18h1.65L7.11 4h-1.6l11.445 16Z"/>
-            </svg>
-          </a>
-
-          {/* Instagram */}
-          <a href="https://www.instagram.com/samdigikive" target="_blank" rel="noopener noreferrer"
-             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5">
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
-            </svg>
-          </a>
-
-          {/* LinkedIn */}
-          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"
-             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5">
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2Zm2-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
-            </svg>
-          </a>
-      </div>
-    </aside>
+    {/* socials */}
+    <div className="mt-4 flex items-center gap-3 justify-center md:justify-start">
+      {/* site */}
+      <a href="https://your-site.example" target="_blank" rel="noopener noreferrer"
+         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
+         aria-label="Website">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
+          <path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M7 5.5c3 .8 7 .8 10 0M7 18.5c3-.8 7-.8 10 0" />
+        </svg>
+      </a>
+      {/* X */}
+      <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
+         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
+         aria-label="Twitter / X">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+          <path d="M18.146 2H21l-6.487 7.41L22 22h-6.8l-4.91-6.39L4.56 22H2l6.94-7.93L2 2h6.8l4.57 5.94L18.146 2Zm-1.19 18h1.65L7.11 4h-1.6l11.445 16Z"/>
+        </svg>
+      </a>
+      {/* Instagram */}
+      <a href="https://www.instagram.com/samdigikive" target="_blank" rel="noopener noreferrer"
+         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
+         aria-label="Instagram">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+        </svg>
+      </a>
+      {/* LinkedIn */}
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"
+         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
+         aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2Zm2-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</aside>
     </div>
   </div>
 </section>
 
       {/* Portfolio */}
-<section
-  id="portfolio"
-  className="scroll-mt-20 flex min-h-screen flex-col justify-center bg-[#fffbec]"
->
+<section id="portfolio" className="scroll-mt-20 bg-[#fffbec] py-14">
   <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
     <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
-    <p className="mt-3 text-lg text-gray-700">
-      Explore my recent works!
-    </p>
-  </div>
+    <p className="mt-3 text-lg text-gray-700">Explore my recent works!</p>
 
-  <div className="mt-8">
-    <PortfolioPanels />
+    {/* Row: small GLB directly under header (left) + cards (right) */}
+    <div className="mt-6 flex items-start gap-6">
+      {/* LEFT: compact GLB */}
+      <div className="shrink-0">
+        <div className="h-[200px] w-[320px] md:h-[240px] md:w-[360px] overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+          <ModelCanvas url="/littledrfummerboi.glb" 
+          rotation={[0, -Math.PI / 2, 0]}
+          envPreset="night"
+          envIntensity={1.2}
+          scale={1} 
+          interactive />
+        </div>
+      </div>
+
+      {/* RIGHT: panels without their own container/spacer */}
+      <div className="flex-1">
+        <PortfolioPanels embedded />
+      </div>
+    </div>
   </div>
 </section>
 

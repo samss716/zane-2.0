@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm">
-            © {new Date().getFullYear()} Zane. All rights reserved.
+            © {new Date().getFullYear()} Zane. 
           </p>
 
           {/* Quick links (edit to taste) */}

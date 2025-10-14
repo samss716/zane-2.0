@@ -48,7 +48,7 @@ export default function ContactSection() {
             href={instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm"
+            className="inline-flex w-fit items-center justify-center rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm"
             aria-label="Open Instagram"
           >
             <img

@@ -1,8 +1,8 @@
-// src/components/portfoliopanels.jsx
+// src/components/PortfolioPanels.jsx
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function PortfolioPanels() {
+export default function PortfolioPanels({ embedded = false }) {
   const navigate = useNavigate();
   const wrapperRef = useRef(null);
   const [inView, setInView] = useState(false);
@@ -17,13 +17,7 @@ export default function PortfolioPanels() {
 
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            setInView(true);
-            // remove this if you want it to replay on re-enter
-           // io.disconnect();
-          }
-        }
+        for (const e of entries) if (e.isIntersecting) setInView(true);
       },
       { threshold: 0.35 }
     );
@@ -33,49 +27,64 @@ export default function PortfolioPanels() {
     return () => io.disconnect();
   }, []);
 
-  return (
-    <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
-      <div
-        ref={wrapperRef}
-        className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10"
-      >
-        {/* Left free space for future animation */}
-        <div className="h-40 w-full shrink-0 rounded-2xl bg-transparent md:h-56 md:w-64 lg:w-80 xl:w-[26rem]" />
-
-        {/* Cards row */}
-        <div className="flex w-full items-stretch justify-between gap-6 md:gap-10">
-          <Card
-            title="3D Works & Animations"
-            bg="#BFD8B8"
-            text="#0f1d14"
-            inView={inView}
-            tyStart="-120px"
-            tyEnd="80px"
-            onClick={() => navigate("/portfolio/3d-models")}
-          />
-          <Card
-            title="Web Designs & Projects"
-            bg="#FECBA1"
-            text="#2b1400"
-            inView={inView}
-            tyStart="120px"
-            tyEnd="0px"
-            delay="80ms"
-            onClick={() => navigate("/web-design")}
-          />
-          <Card
-            title="Traditional Works"
-            bg="#E6E1FF"
-            text="#1c1330"
-            inView={inView}
-            tyStart="-120px"
-            tyEnd="-80px"
-            delay="160ms"
-            onClick={() => navigate("/traditional/portraits")}
-          />
+  const Outer = ({ children }) =>
+    embedded ? (
+      <div ref={wrapperRef} className="flex flex-col gap-5 md:gap-8">
+        {children}
+      </div>
+    ) : (
+      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
+        <div
+          ref={wrapperRef}
+          className="flex flex-col md:flex-row md:items-center md:justify-between gap-5 md:gap-8"
+        >
+          {children}
         </div>
       </div>
-    </div>
+    );
+
+  return (
+    <Outer>
+      {!embedded && (
+        <div className="h-40 w-full shrink-0 rounded-2xl bg-transparent md:h-56 md:w-64 lg:w-80 xl:w-[26rem]" />
+      )}
+
+      {/* Cards row */}
+      <div className="flex w-full items-stretch justify-between gap-5 md:gap-8">
+        <Card
+          title="3D Works & Animations"
+          bg="#BFD8B8"
+          text="#0f1d14"
+          inView={inView}
+          // was -120 -> 80 (too low). Tighten:
+          tyStart="-80px"
+          tyEnd="0px"
+          onClick={() => navigate("/portfolio/3d-models")}
+        />
+        <Card
+          title="Web Designs & Projects"
+          bg="#FECBA1"
+          text="#2b1400"
+          inView={inView}
+          // was 120 -> 0. Tighten & keep slightly above center:
+          tyStart="90px"
+          tyEnd="-70px"
+          delay="80ms"
+          onClick={() => navigate("/web-design")}
+        />
+        <Card
+          title="Traditional Works"
+          bg="#E6E1FF"
+          text="#1c1330"
+          inView={inView}
+          // was -120 -> -80. Tighten:
+          tyStart="-10px"
+          tyEnd="-140px"
+          delay="160ms"
+          onClick={() => navigate("/traditional/portraits")}
+        />
+      </div>
+    </Outer>
   );
 }
 
@@ -86,10 +95,12 @@ function Card({ title, bg, text, inView, tyStart, tyEnd, delay = "0ms", onClick 
       onClick={onClick}
       className={[
         "diag-panel", inView ? "in" : "",
-          "group flex-1 basis-0 max-w-[380px]",
+        "group flex-1 basis-0 max-w-[380px]",
         "h-64 md:h-72 lg:h-80 rounded-2xl p-6",
-        "shadow-sm ring-1 ring-black/5",
-        "transition-colors duration-200 text-left"
+        "ring-1 ring-black/5 shadow-xl",
+        // ✨ hover lift
+        "transform-gpu transition-transform duration-500 ease-out",
+        "hover:-translate-y-2 hover:shadow-lg active:translate-y-0.5"
       ].join(" ")}
       style={{
         backgroundColor: bg,

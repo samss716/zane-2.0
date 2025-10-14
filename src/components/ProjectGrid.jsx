@@ -54,7 +54,7 @@ export default function ProjectGrid({ dataUrl = "/data/projects.json", collectio
       {/* 🔹 Empty state */}
       {items.length === 0 && (
         <p className="text-sm text-gray-600">
-          No projects yet for this section. Add entries to <code>projects.json</code>.
+          No projects yet for this section.
         </p>
       )}
 
