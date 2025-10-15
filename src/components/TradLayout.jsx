@@ -29,7 +29,7 @@ export default function TraditionalLayout() {
             </nav>
           </aside>
 
-          {/* RIGHT: the strip content from child route */}
+          {/* RIGHT: strip content from child route */}
           <div className="min-h-[40vh] flex-1 min-w-0">
             <Outlet />
           </div>

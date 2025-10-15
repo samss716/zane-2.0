@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 export default function Portfolio() {
   return (
     <main className="relative min-h-screen bg-white pt-20">
-      {/* Hero placeholder (drop your animation here later) */}
+      {/* Hero placeholder */}
       <section
         id="portfolio-hero"
         className="relative flex h-[35vh] items-center justify-center bg-[#f5f5f5]"

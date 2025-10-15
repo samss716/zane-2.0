@@ -51,7 +51,7 @@ export default function ProjectGrid({ dataUrl = "/data/projects.json", collectio
     <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 py-10">
       {err && <p className="mb-4 text-sm text-red-600">{err} (showing fallback)</p>}
 
-      {/* 🔹 Empty state */}
+      {/* Empty state */}
       {items.length === 0 && (
         <p className="text-sm text-gray-600">
           No projects yet for this section.

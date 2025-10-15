@@ -54,7 +54,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile toggle (< lg) — we’ll just hide it on large screens */}
+        {/* Mobile toggle (< lg) — hidden on large screens */}
         <button
           className="lg:hidden rounded-md px-3 py-2 transition-colors hover:bg-black/5"
           onClick={() => setOpen((v) => !v)}
@@ -62,7 +62,7 @@ export default function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
         >
-          {/* Simple three-lines icon to avoid pulling extra icon deps */}
+          {/* three-lines icon to avoid pulling extra icon */}
           <span className="block h-0.5 w-6 bg-black mb-1" />
           <span className="block h-0.5 w-6 bg-black mb-1" />
           <span className="block h-0.5 w-6 bg-black" />

@@ -31,7 +31,7 @@ body {
   100% { transform: translateY(0);     opacity: 1; }
 }
 
-/* be kind to users who prefer reduced motion */
+/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .drop-word .char {
     animation: none !important;
@@ -107,7 +107,7 @@ body {
   font-size: clamp(3rem, 9vw, 10rem);
   letter-spacing: 0.06em;
   line-height: 1;
-  color: #3b2b1b;            /* warm brown-ish */
+  color: #3b2b1b;          
   opacity: .12;              /* subtle */
 }
 
@@ -191,7 +191,6 @@ body {
   background: transparent;
 }
 
-/* Hide ALL arrow buttons explicitly */
 .rect-pink-scroll::-webkit-scrollbar-button,
 .rect-pink-scroll::-webkit-scrollbar-button:single-button,
 .rect-pink-scroll::-webkit-scrollbar-button:horizontal:increment,
@@ -208,7 +207,7 @@ body {
   background: transparent;
 }
 .rect-pink-scroll::-webkit-scrollbar-corner {
-  background: transparent; /* avoids weird corner shapes */
+  background: transparent;
 }
 
 /* Pink rectangular thumb (no pill) */

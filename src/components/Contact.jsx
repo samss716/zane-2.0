@@ -2,11 +2,9 @@
 import Marquee from "./Marquee";
 
 export default function ContactSection() {
-  // Your social link
   const instagramUrl =
     "https://www.instagram.com/samdigikive?igsh=YjJhbHZ5czc5b2Fy&utm_source=qr";
 
-  // Reliable QR PNG from the URL
   const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=png&data=${encodeURIComponent(
     instagramUrl
   )}`;
@@ -16,18 +14,18 @@ export default function ContactSection() {
       id="contact"
       className="relative isolate overflow-hidden bg-[#fffbec] py-16 lg:py-20"
     >
-      {/* BACKGROUND: marquee sits underneath via -z-10 */}
+      {/* BG: marquee sits underneath via -z-10 */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <Marquee
           text="connect with me"
           className="h-full w-full opacity-20 tracking-[.2em]"
           aria-hidden
         />
-        {/* Soft center fade so the marquee peeks mostly at the sides */}
+        {/* Soft center fade; marquee peeks mostly at the sides */}
         <div
           className="absolute inset-0"
           // radial fade from solid bg in the center to transparent at edges
-          // tweak the 42%/65% stops to expand/contract the clear center
+          // tweak 42%/65% stops to expand/contract the clear center
           style={{
             background:
               "radial-gradient(circle at center, rgba(255,251,236,1) 0%, rgba(255,251,236,1) 42%, rgba(255,251,236,0) 65%)",
@@ -35,7 +33,7 @@ export default function ContactSection() {
         />
       </div>
 
-      {/* FOREGROUND CONTENT */}
+      {/* FOREGROUND */}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
         <h2 className="mb-8 text-center font-bricolage text-3xl md:text-4xl tracking-tight">
           Social
@@ -89,7 +87,7 @@ export default function ContactSection() {
           </a>
         </div>
 
-        {/* Mobile-only single QR (stacks below video) */}
+        {/* Mobile-only single QR (stacking below video) */}
         <div className="mt-8 flex justify-center md:hidden">
           <a
             href={instagramUrl}

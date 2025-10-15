@@ -98,7 +98,7 @@ function Card({ title, bg, text, inView, tyStart, tyEnd, delay = "0ms", onClick 
         "group flex-1 basis-0 max-w-[380px]",
         "h-64 md:h-72 lg:h-80 rounded-2xl p-6",
         "ring-1 ring-black/5 shadow-xl",
-        // ✨ hover lift
+        // hover lift
         "transform-gpu transition-transform duration-500 ease-out",
         "hover:-translate-y-2 hover:shadow-lg active:translate-y-0.5"
       ].join(" ")}

@@ -24,13 +24,13 @@ export default function WebDesign() {
 <section className="relative isolate flex h-[30vh] items-center justify-center overflow-hidden bg-[#f5f5f5]">
   {/* Background image (on top of the bg color, behind text) */}
   <img
-    src="/media/web/cafe.jpg"      // make sure this is under /public/media/web/
+    src="/media/web/cafe.jpg"      
     alt=""
     aria-hidden="true"
     className="absolute inset-0 z-0 h-full w-full object-cover"
   />
 
-  {/* Optional overlay for readability */}
+  {/* overlay for readability */}
   <div className="absolute inset-0 z-[1] bg-black/10" />
 
   {/* Text */}

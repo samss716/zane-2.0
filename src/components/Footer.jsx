@@ -7,7 +7,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Zane. 
           </p>
 
-          {/* Quick links (edit to taste) */}
+          {/* Quick links */}
           <nav className="flex items-center gap-4 text-sm">
           {/*  <a href="/portfolio" className="hover:text-white">Portfolio</a>
             <a href="/traditional/portraits" className="hover:text-white">Traditional</a> */}

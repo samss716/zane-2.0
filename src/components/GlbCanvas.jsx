@@ -8,7 +8,6 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 
-/** Loads and renders a GLB from /public */
 function GLB({ url, rotation = [0, 0, 0], scale = 1 }) {
   const { scene } = useGLTF(url);
   return (
@@ -18,11 +17,10 @@ function GLB({ url, rotation = [0, 0, 0], scale = 1 }) {
   );
 }
 
-// (Optional) Preload a common default; change to your real filename if you want
 useGLTF.preload("/lumiaabstract.glb");
 
 export default function ModelCanvas({
-  url = "/lumiaabstract.glb",   // <-- set to your actual file in /public
+  url = "/lumiaabstract.glb",  
   rotation = [0, 0.25, 0],
   scale = 1,
   interactive = true,     // set true to allow drag rotation

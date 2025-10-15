@@ -6,7 +6,7 @@ export default function Traditional() {
 
   return (
     <main className="relative min-h-screen bg-white pt-20">
-      {/* Hero placeholder for future animation */}
+      {/* Hero placeholder */}
       <section className="relative flex h-[35vh] items-center justify-center bg-[#f5f5f5]">
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 text-center">
           <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">

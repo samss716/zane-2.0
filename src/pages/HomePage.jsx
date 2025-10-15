@@ -23,7 +23,7 @@ export default function HomePage() {
 
                <VideoLoop
                 src="/media/lumia-abstract.mp4"
-                // poster="/media/hero-poster.jpg" // optional
+                // poster="/media/hero-poster.jpg"
               />
             </div>
 
@@ -116,7 +116,6 @@ export default function HomePage() {
           <path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M7 5.5c3 .8 7 .8 10 0M7 18.5c3-.8 7-.8 10 0" />
         </svg>
       </a>
-      {/* X */}
       <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
          aria-label="Twitter / X">
@@ -135,7 +134,7 @@ export default function HomePage() {
         </svg>
       </a>
       {/* LinkedIn */}
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"
+      <a href="https://www.linkedin.com/in/samantha-sanchez-0a1637297" target="_blank" rel="noopener noreferrer"
          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
          aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
@@ -181,7 +180,7 @@ export default function HomePage() {
       {/* Contact */}
       <Contact
         videoSrc="/media/sams.mp4"
-        leftQR="/media/qr/instagram.png"               // your QR asset(s)
+        leftQR="/media/qr/instagram.png"               
         rightQR="/media/qr/instagram.png"
       />
 

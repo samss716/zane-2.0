@@ -121,7 +121,6 @@ function Lightbox({ item, onClose, onNext, onPrev }) {
         await el.requestFullscreen?.();
       }
     } catch {
-      /* noop */
     }
   };
 

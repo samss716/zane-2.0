@@ -2,7 +2,7 @@ export default function Marquee({
   text = "explore my digital archive",
   className = "",
 }) {
-  // Build one chunk of repeated text
+  // one chunk of repeated text
   const Chunk = () => (
     <div className="flex items-center gap-12 whitespace-nowrap">
       {Array.from({ length: 4 }).map((_, i) => (
