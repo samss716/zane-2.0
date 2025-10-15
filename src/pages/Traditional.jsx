@@ -13,7 +13,7 @@ export default function Traditional() {
             Traditional Works
           </h1>
           <p className="mt-3 text-gray-600">
-            (animation slot — swap this later)
+            (animation slot)
           </p>
         </div>
       </section>

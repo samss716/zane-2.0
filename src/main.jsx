@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-import HomePage from "./pages/Homepage.jsx";
+import HomePage from "./pages/HomePage.jsx";
 import Portfolio from "./pages/Portfolio.jsx";
 import TraditionalLayout from "./components/TradLayout.jsx";
 import CollectionStrip from "./components/TradStrip.jsx";

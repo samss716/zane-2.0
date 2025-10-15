@@ -9,7 +9,7 @@ export default function TraditionalLayout() {
           <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">
             Traditional Works
           </h1>
-          <p className="mt-3 text-gray-600">(animation slot — replace later)</p>
+          <p className="mt-3 text-gray-600">(animation slot)</p>
         </div>
       </section>
 
