@@ -40,69 +40,70 @@ export default function ContactSection() {
         </h2>
 
         {/* Video + QR layout */}
-        <div className="grid items-center gap-8 md:grid-cols-[1fr_minmax(320px,2fr)_1fr]">
-          {/* Left QR */}
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit items-center justify-center rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm"
-            aria-label="Open Instagram"
-          >
-            <img
-              src={qrImg}
-              alt="Instagram QR code"
-              className="h-40 w-40 object-contain opacity-90"
-            />
-          </a>
+<div className="grid items-center gap-8 md:grid-cols-[1fr_minmax(320px,2fr)_1fr]">
+  {/* Left QR — hidden on mobile, aligned toward the video on desktop */}
+  <a
+    href={instagramUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hidden md:inline-flex w-fit items-center justify-center md:justify-self-end rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm"
+    aria-label="Open Instagram"
+  >
+    <img
+      src={qrImg}
+      alt="Instagram QR code"
+      className="h-40 w-40 object-contain opacity-90"
+    />
+  </a>
 
-          {/* Center video */}
-          <div className="relative z-10 overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
-            <video
-              className="h-[240px] w-full object-cover md:h-[360px]"
-              src="/media/sams.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            />
-          </div>
+  {/* Center video */}
+  <div className="relative z-10 overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
+    <video
+      className="h-[240px] w-full object-cover md:h-[360px]"
+      src="/media/sams.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+    />
+  </div>
 
-          {/* Right QR */}
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:flex items-center justify-center"
-            aria-label="Open Instagram"
-          >
-            <div className="rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm">
-              <img
-                src={qrImg}
-                alt="Instagram QR code"
-                className="h-40 w-40 object-contain opacity-90"
-              />
-            </div>
-          </a>
-        </div>
+  {/* Right QR — desktop only (no hidden on inner div needed) */}
+  <a
+    href={instagramUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hidden md:flex items-center justify-center"
+    aria-label="Open Instagram"
+  >
+    <div className="rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm">
+      <img
+        src={qrImg}
+        alt="Instagram QR code"
+        className="h-40 w-40 object-contain opacity-90"
+      />
+    </div>
+  </a>
+</div>
 
-        {/* Mobile-only single QR (stacking below video) */}
-        <div className="mt-8 flex justify-center md:hidden">
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm"
-            aria-label="Open Instagram"
-          >
-            <img
-              src={qrImg}
-              alt="Instagram QR code"
-              className="h-40 w-40 object-contain opacity-90"
-            />
-          </a>
-        </div>
+{/* Mobile-only single QR (centered) */}
+<div className="mt-8 flex justify-center md:hidden">
+  <a
+    href={instagramUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex w-fit items-center justify-center rounded-3xl border border-black/10 bg-white/40 backdrop-blur-md p-4 shadow-sm"
+    aria-label="Open Instagram"
+  >
+    <img
+      src={qrImg}
+      alt="Instagram QR code"
+      className="h-40 w-40 object-contain opacity-90"
+    />
+  </a>
+</div>
+
       </div>
     </section>
   );
