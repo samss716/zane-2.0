@@ -50,7 +50,7 @@ export default function PortfolioPanels({ embedded = false }) {
       )}
 
       {/* Cards row */}
-      <div className="flex w-full items-stretch justify-between gap-5 md:gap-8">
+      <div className="flex w-full flex-col sm:flex-row items-stretch justify-between gap-5 md:gap-8">
         <Card
           title="3D Works & Animations"
           bg="#BFD8B8"
@@ -95,7 +95,7 @@ function Card({ title, bg, text, inView, tyStart, tyEnd, delay = "0ms", onClick 
       onClick={onClick}
       className={[
         "diag-panel", inView ? "in" : "",
-        "group flex-1 basis-0 max-w-[380px]",
+        "group w-full sm:flex-1 sm:basis-0 sm:max-w-[380px]",
         "h-64 md:h-72 lg:h-80 rounded-2xl p-6",
         "ring-1 ring-black/5 shadow-xl",
         // hover lift

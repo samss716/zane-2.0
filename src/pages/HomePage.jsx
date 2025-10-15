@@ -155,25 +155,28 @@ export default function HomePage() {
     <p className="mt-3 text-lg text-gray-700">Explore my recent works!</p>
 
     {/* Row: small GLB directly under header (left) + cards (right) */}
-    <div className="mt-6 flex items-start gap-6">
-      {/* LEFT: compact GLB */}
-      <div className="shrink-0">
-        <div className="h-[200px] w-[320px] md:h-[240px] md:w-[360px] overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
-          <ModelCanvas url="/littledrfummerboi.glb" 
-          rotation={[0, -Math.PI / 2, 0]}
-          envPreset="night"
-          envIntensity={1.2}
-          scale={1} 
-          interactive />
-        </div>
-      </div>
-
-      {/* RIGHT: panels without their own container/spacer */}
-      <div className="flex-1">
-        <PortfolioPanels embedded />
-      </div>
+    {/* Row: GLB + cards (stack on mobile) */}
+<div className="mt-6 flex flex-col md:flex-row items-start gap-6">
+  {/* LEFT: compact GLB */}
+  <div className="shrink-0 mx-auto md:mx-0">
+    <div className="h-[200px] w-[320px] md:h-[240px] md:w-[360px] overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+      <ModelCanvas
+        url="/littledrfummerboi.glb"   // <- looks like you had a typo here
+        rotation={[0, -Math.PI / 2, 0]}
+        envPreset="night"
+        envIntensity={1.2}
+        scale={1}
+        interactive
+      />
     </div>
   </div>
+
+  {/* RIGHT: panels */}
+  <div className="flex-1 w-full">
+    <PortfolioPanels embedded />
+  </div>
+</div>
+</div>
 </section>
 
 
