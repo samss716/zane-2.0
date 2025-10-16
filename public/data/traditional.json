@@ -1,5 +1,19 @@
 [
   {
+    "id": "p1",
+    "title": "Portrait 01",
+    "src": "/media/traditional/portraits/Portrait_01.jpg",
+    "year": 2020,
+    "collection": "portraits"
+  },
+  {
+    "id": "p2",
+    "title": "Portrait 02",
+    "src": "/media/traditional/portraits/Portrait_02.jpg",
+    "year": 2021,
+    "collection": "portraits"
+  },
+  {
     "id": "t1",
     "title": "Figure Study 01",
     "src": "/media/traditional/figure-studies/2-29.jpg",
@@ -61,5 +75,12 @@
     "src": "/media/traditional/milk-series/milk-series02.jpg",
     "year": 2023,
     "collection": "milk-collection"
+  },
+  {
+    "id": "a1",
+    "title": "Environment Study",
+    "src": "/media/traditional/archive/Archive_01.jpg",
+    "year": 2022,
+    "collection": "archive"
   }
 ]
