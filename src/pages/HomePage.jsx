@@ -108,21 +108,7 @@ export default function HomePage() {
     {/* socials */}
     <div className="mt-4 flex items-center gap-3 justify-center md:justify-start">
       {/* site */}
-      <a href="https://your-site.example" target="_blank" rel="noopener noreferrer"
-         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
-         aria-label="Website">
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
-          <path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M7 5.5c3 .8 7 .8 10 0M7 18.5c3-.8 7-.8 10 0" />
-        </svg>
-      </a>
-      <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
-         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
-         aria-label="Twitter / X">
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-          <path d="M18.146 2H21l-6.487 7.41L22 22h-6.8l-4.91-6.39L4.56 22H2l6.94-7.93L2 2h6.8l4.57 5.94L18.146 2Zm-1.19 18h1.65L7.11 4h-1.6l11.445 16Z"/>
-        </svg>
-      </a>
+      
       {/* Instagram */}
       <a href="https://www.instagram.com/samdigikive" target="_blank" rel="noopener noreferrer"
          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
