@@ -55,5 +55,5 @@ createRoot(document.getElementById("root")).render(
      <Suspense fallback={<div className="p-6">Loading…</div>}>
       <RouterProvider router={router} />
     </Suspense>
-  </StrictMode>
+  </StrictMode> //stric mode create dbl pg views in dev; normal in prod
 );
