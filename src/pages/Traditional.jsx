@@ -6,17 +6,6 @@ export default function Traditional() {
 
   return (
     <main className="relative min-h-screen bg-white pt-20">
-      {/* Hero placeholder */}
-      <section className="relative flex h-[35vh] items-center justify-center bg-[#f5f5f5]">
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">
-            Traditional Works
-          </h1>
-          <p className="mt-3 text-gray-600">
-            (animation slot)
-          </p>
-        </div>
-      </section>
 
       {/* Content row: left nav + right horizontal scroller (child routes render here) */}
       <section className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 py-10">

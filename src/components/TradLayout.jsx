@@ -4,14 +4,25 @@ export default function TraditionalLayout() {
   return (
     <main className="relative min-h-screen bg-white pt-20">
       {/* Hero */}
-      <section className="relative flex h-[35vh] items-center justify-center bg-[#f5f5f5]">
-        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">
-            Traditional Works
-          </h1>
-          <p className="mt-3 text-gray-600">(animation slot)</p>
-        </div>
-      </section>
+      <section className="relative isolate flex h-[35vh] items-center justify-center overflow-hidden bg-[#f5f5f5]">
+  <img
+    src="/media/traditional/bird.jpeg"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 z-0 h-full w-full object-cover object-[center_25%]"
+  />
+
+  <div className="absolute inset-0 z-[1] bg-black/20" />
+
+  <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 text-center text-white">
+    <h1 className="font-bricolage text-4xl md:text-5xl tracking-tight">
+      Traditional Works
+    </h1>
+    <p className="mt-3 text-white/85">
+      Drawings, studies, and archive selections
+    </p>
+  </div>
+</section>
 
       {/* Row: sidebar + horizontal scroller */}
       <section className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 py-10 over">

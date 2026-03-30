@@ -77,6 +77,20 @@
     "collection": "milk-collection"
   },
   {
+    "id": "m3",
+    "title": "Milk Series 03",
+    "src": "/media/traditional/milk-series/milk-series03.jpg",
+    "year": 2023,
+    "collection": "milk-collection"
+  },
+  {
+    "id": "m4",
+    "title": "Milk Series 04",
+    "src": "/media/traditional/milk-series/milk-series04.jpg",
+    "year": 2023,
+    "collection": "milk-collection"
+  },
+  {
     "id": "a1",
     "title": "Environment Study",
     "src": "/media/traditional/archive/Archive_01.jpg",
