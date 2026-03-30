@@ -26,5 +26,11 @@
     "thumb": "/media/web/roundtbl.png",
     "href": "https://www.figma.com/design/OtdFSYSPC1vDAZMkCWYjj8/roundtbl?node-id=0-1&t=a3BGapcuDhDzPU6e-1",
     "type": "image"
+  },
+  {
+  "id": "book-club",
+  "title": "Book Club App",
+  "thumb": "/media/web/roundtbl.png",
+  "href": "/book-club-case-study"
   }
 ]

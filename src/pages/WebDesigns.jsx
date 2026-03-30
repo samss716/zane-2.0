@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function WebDesign() {
   const [items, setItems] = useState([]);
@@ -67,14 +68,16 @@ function Card({ item }) {
   );
 
   return item.href ? (
-    <a href={item.href} className="block group">
-      {content}
-      <div className="mt-2 text-sm text-gray-700 group-hover:text-gray-900">{item.title}</div>
-    </a>
-  ) : (
-    <div>
-      {content}
-      <div className="mt-2 text-sm text-gray-700">{item.title}</div>
+  <Link to={item.href} className="block group">
+    {content}
+    <div className="mt-2 text-sm text-gray-700 group-hover:text-gray-900">
+      {item.title}
     </div>
-  );
+  </Link>
+) : (
+  <div>
+    {content}
+    <div className="mt-2 text-sm text-gray-700">{item.title}</div>
+  </div>
+);
 }

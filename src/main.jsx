@@ -8,6 +8,7 @@ import Portfolio from "./pages/Portfolio.jsx";
 import TraditionalLayout from "./components/TradLayout.jsx";
 import CollectionStrip from "./components/TradStrip.jsx";
 import WebDesign from "./pages/WebDesigns.jsx";
+import BookClubCaseStudy from "./pages/case-studies/BookClubCaseStudy.jsx";
 
 const ThreeDModelsPage = lazy(() => import("./pages/ThreeDModels.jsx"));
 const SimulationsPage = lazy(() => import("./pages/Simulations.jsx"));
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
       },
 
       { path: "/web-design", element: <WebDesign /> },
+      { path: "/book-club-case-study", element: <BookClubCaseStudy /> },
     ],
   },
 ]);
