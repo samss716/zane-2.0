@@ -45,7 +45,7 @@ export default function BookClubCaseStudy() {
           Project context
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
-          Add your project background here later.
+          project background
         </p>
       </section>
 
@@ -60,7 +60,7 @@ export default function BookClubCaseStudy() {
           Research and insights
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
-          Add your user research, findings, or design reasoning here later.
+          user research, findings, and design reasoning.
         </p>
       </section>
 
@@ -75,7 +75,7 @@ export default function BookClubCaseStudy() {
           Prototyping and iteration
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
-          Add your wireframes, prototypes, interaction ideas, and iteration notes here later.
+          wireframes, prototypes, interaction ideas, and iteration notes here later.
         </p>
       </section>
     </main>
