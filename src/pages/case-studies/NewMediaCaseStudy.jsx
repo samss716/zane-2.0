@@ -2,14 +2,14 @@ import CaseStudyHero from "../../components/CaseStudyHero";
 import CaseStudySectionNav from "../../components/CaseStudySectionNav";
 import CaseStudyOverview from "../../components/CaseStudyOverview";
 
-export default function BookClubCaseStudy() {
+export default function NewMediaCaseStudy() {
   return (
     <main className="min-h-screen bg-white pt-20">
       <CaseStudyHero
         eyebrow="Case Study"
-        title="RoundTbl"
-        subtitle="Designing a more social and intuitive reading experience created for book lovers and discussion enthusiasts."
-        image="/media/web/roundtbl.png"
+        title="New Media Cooperative"
+        subtitle="A avant-garde digital media platform used to represent the UNT New Media Cooperative."
+        image="/media/web/nmc.png"
       />
 
       <CaseStudySectionNav
@@ -21,15 +21,15 @@ export default function BookClubCaseStudy() {
       />
 
       <CaseStudyOverview
-        overview="This project explores the design of a book club application focused on making reading feel more collaborative, engaging, and easy to navigate. The case study will eventually document the problem space, design goals, research insights, and the evolution of the interface."
-        role="Product Designer / UI Designer / Frontend Developer"
+        overview="This project explores the design of a digital media platform for the UNT New Media Cooperative, focusing on documenting the problem space, design goals, research insights, and the evolution of the cooperative."
+        role="UI Designer / Frontend Developer"
         responsibilities={[
           "Defined the product direction and feature structure",
           "Designed interface flows and page layouts",
           "Built interactive frontend screens and reusable components",
         ]}
         impact={[
-          "Created a clearer case-study presentation format for portfolio work",
+          "Created a clearer case-study presentation format for protoflios and unique UI",
           "Established a reusable layout system for future project pages",
         ]}
       />

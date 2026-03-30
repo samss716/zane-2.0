@@ -2,14 +2,14 @@ import CaseStudyHero from "../../components/CaseStudyHero";
 import CaseStudySectionNav from "../../components/CaseStudySectionNav";
 import CaseStudyOverview from "../../components/CaseStudyOverview";
 
-export default function BookClubCaseStudy() {
+export default function InteriorDesignCaseStudy() {
   return (
     <main className="min-h-screen bg-white pt-20">
       <CaseStudyHero
         eyebrow="Case Study"
-        title="RoundTbl"
-        subtitle="Designing a more social and intuitive reading experience created for book lovers and discussion enthusiasts."
-        image="/media/web/roundtbl.png"
+        title="Interior Design Portfolio"
+        subtitle="A curated collection of eco-conscious Korean-inspired interior design projects - Focus on sustainability, organic material, natural harmony and functionality. ."
+        image="/media/web/figma-1.png"
       />
 
       <CaseStudySectionNav
@@ -21,8 +21,8 @@ export default function BookClubCaseStudy() {
       />
 
       <CaseStudyOverview
-        overview="This project explores the design of a book club application focused on making reading feel more collaborative, engaging, and easy to navigate. The case study will eventually document the problem space, design goals, research insights, and the evolution of the interface."
-        role="Product Designer / UI Designer / Frontend Developer"
+        overview="This project explores the design of a interior design portfolio focused on documenting the problem space, design goals, research insights, and the evolution of the company."
+        role=" UI Designer / Frontend Developer"
         responsibilities={[
           "Defined the product direction and feature structure",
           "Designed interface flows and page layouts",

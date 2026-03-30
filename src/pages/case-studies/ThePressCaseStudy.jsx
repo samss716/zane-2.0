@@ -2,14 +2,14 @@ import CaseStudyHero from "../../components/CaseStudyHero";
 import CaseStudySectionNav from "../../components/CaseStudySectionNav";
 import CaseStudyOverview from "../../components/CaseStudyOverview";
 
-export default function BookClubCaseStudy() {
+export default function ThePressCaseStudy() {
   return (
     <main className="min-h-screen bg-white pt-20">
       <CaseStudyHero
         eyebrow="Case Study"
-        title="RoundTbl"
-        subtitle="Designing a more social and intuitive reading experience created for book lovers and discussion enthusiasts."
-        image="/media/web/roundtbl.png"
+        title="The Press"
+        subtitle="A mock ecommerce website for a panini deli & coffee roaster, designed to showcase their brand identity and product offerings through a intuitive and modern interface."
+        image="/media/web/figma-2.png"
       />
 
       <CaseStudySectionNav
@@ -21,7 +21,7 @@ export default function BookClubCaseStudy() {
       />
 
       <CaseStudyOverview
-        overview="This project explores the design of a book club application focused on making reading feel more collaborative, engaging, and easy to navigate. The case study will eventually document the problem space, design goals, research insights, and the evolution of the interface."
+        overview="This project explores the design of a ecommerce website for a panini deli & coffee roaster, focused on documenting the problem space, design goals, research insights, and the evolution of branding."
         role="Product Designer / UI Designer / Frontend Developer"
         responsibilities={[
           "Defined the product direction and feature structure",
@@ -29,7 +29,7 @@ export default function BookClubCaseStudy() {
           "Built interactive frontend screens and reusable components",
         ]}
         impact={[
-          "Created a clearer case-study presentation format for portfolio work",
+          "Created a clearer case-study presentation format for checkout flows and ecommerce UI",
           "Established a reusable layout system for future project pages",
         ]}
       />

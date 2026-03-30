@@ -9,6 +9,9 @@ import TraditionalLayout from "./components/TradLayout.jsx";
 import CollectionStrip from "./components/TradStrip.jsx";
 import WebDesign from "./pages/WebDesigns.jsx";
 import BookClubCaseStudy from "./pages/case-studies/BookClubCaseStudy.jsx";
+import InteriorDesignCaseStudy from "./pages/case-studies/InteriorDesignCaseStudy.jsx";
+import ThePressCaseStudy from "./pages/case-studies/ThePressCaseStudy.jsx";
+import NewMediaCaseStudy from "./pages/case-studies/NewMediaCaseStudy.jsx";
 
 const ThreeDModelsPage = lazy(() => import("./pages/ThreeDModels.jsx"));
 const SimulationsPage = lazy(() => import("./pages/Simulations.jsx"));
@@ -48,6 +51,9 @@ const router = createBrowserRouter([
 
       { path: "/web-design", element: <WebDesign /> },
       { path: "/book-club-case-study", element: <BookClubCaseStudy /> },
+      { path: "/interior-design-case-study", element: <InteriorDesignCaseStudy /> },
+      { path: "/the-press-case-study", element: <ThePressCaseStudy /> },
+      { path: "/new-media-case-study", element: <NewMediaCaseStudy /> }
     ],
   },
 ]);
