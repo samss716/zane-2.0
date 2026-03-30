@@ -12,7 +12,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative isolate overflow-hidden bg-[#fffbec] py-16 lg:py-20"
+      className="relative isolate overflow-hidden bg-[#f5f5f5] py-16 lg:py-20"
     >
       {/* BG: marquee sits underneath via -z-10 */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -28,7 +28,7 @@ export default function ContactSection() {
           // tweak 42%/65% stops to expand/contract the clear center
           style={{
             background:
-              "radial-gradient(circle at center, rgba(255,251,236,1) 0%, rgba(255,251,236,1) 42%, rgba(255,251,236,0) 65%)",
+              "radial-gradient(circle at center, #f5f5f5 0%, #f5f5f5 42%, transparent 65%)",
           }}
         />
       </div>

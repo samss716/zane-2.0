@@ -9,7 +9,7 @@ import VideoLoop from "../components/VideoLoop.jsx";
 export default function HomePage() {
   return (
     // pt-20 offsets your fixed Navbar
-    <main className="relative min-h-screen bg-[#fffbec] pt-20">
+    <main className="relative min-h-screen bg-[#f5f5f5] pt-20">
       {/* HERO */}
       <section
         id="hero"
@@ -43,12 +43,12 @@ export default function HomePage() {
       {/* Marquee / Intro */}
       <section className="py-10">
         <div className="mx-auto w-full max-w-6xl px-0 sm:px-0 lg:px-0">
-        <Marquee className="bg-[#fffbec] py-6" />
+        <Marquee className="bg-[#f5f5f5] py-6" />
         </div>
       </section>
 
     {/* About */}
-    <section id="about" className="relative scroll-mt-20 bg-[#fffbec]">
+    <section id="about" className="relative scroll-mt-20 bg-[#f5f5f5]">
       {/* Background gradient */}
       
     <div className="pointer-events-none absolute inset-0 -z-10" />
@@ -135,7 +135,7 @@ export default function HomePage() {
 </section>
 
       {/* Portfolio */}
-<section id="portfolio" className="scroll-mt-20 bg-[#fffbec] py-14">
+<section id="portfolio" className="scroll-mt-20 bg-[#f5f5f5] py-14">
   <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
     <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
     <p className="mt-3 text-lg text-gray-700">Explore my recent works!</p>
