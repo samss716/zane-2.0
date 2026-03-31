@@ -16,21 +16,23 @@ export default function BookClubCaseStudy() {
         items={[
           { label: "Context", href: "#context" },
           { label: "Research", href: "#research" },
-          { label: "Prototyping", href: "#prototyping" },
+          { label: "Design", href: "#design" },
+          { label: "AI Prototyping", href: "#aiprototyping" },
+          { label: "APIs and Integrations", href: "#APISandIntegrations" },
         ]}
       />
 
       <CaseStudyOverview
-        overview="This project explores the design of a book club application focused on making reading feel more collaborative, engaging, and easy to navigate. The case study will eventually document the problem space, design goals, research insights, and the evolution of the interface."
+        overview="RoundTbl is a collaborative book club platform designed to foster open discussion and shared decision-making. Inspired by the symbolism of the Arthurian Round Table, the platform integrates AI-assisted conversation tools and API-driven book discovery to support equitable group engagement."
         role="Product Designer / UI Designer / Frontend Developer"
         responsibilities={[
-          "Defined the product direction and feature structure",
+          "Defined the application concept and feature structure",
           "Designed interface flows and page layouts",
-          "Built interactive frontend screens and reusable components",
+          "Built interactive frontend animations and reusable components",
         ]}
         impact={[
           "Created a clearer case-study presentation format for portfolio work",
-          "Established a reusable layout system for future project pages",
+          "Explored full stack development by building a React frontend and Node.js backend, integrating AI tools and external APIs",
         ]}
       />
 
@@ -45,7 +47,11 @@ export default function BookClubCaseStudy() {
           Project context
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
-          project background
+          	Book clubs are inherently collaborative, yet many groups struggle to reach decisions that reflect the interests of all members. While groups are often organized around a shared goal, selecting books can become a point of friction.
+
+This project explores how digital platforms can better support equitable participation in group decision-making. Inspired by the Arthurian Round Table—a symbol of equality and shared voice—I sought to create a centralized space where each member has an equal influence in shaping the group’s reading experience.
+To support this, I introduced AI-assisted tools designed to facilitate balanced discussion, helping groups navigate differing preferences and reach more inclusive decisions.
+
         </p>
       </section>
 
@@ -65,17 +71,47 @@ export default function BookClubCaseStudy() {
       </section>
 
       <section
-        id="prototyping"
+        id="design"
         className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-8 lg:px-12"
       >
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-orange-500">
-          Prototyping
+          Design
+        </p>
+        <h2 className="font-bricolage text-3xl tracking-tight text-gray-900">
+          Design and implementation
+        </h2>
+        <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
+          Color palette, typography, and design system details.
+        </p>
+      </section>
+
+      <section
+        id="aiprototyping"
+        className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-8 lg:px-12"
+      >
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-orange-500">
+          AI Prototyping
         </p>
         <h2 className="font-bricolage text-3xl tracking-tight text-gray-900">
           Prototyping and iteration
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
           wireframes, prototypes, interaction ideas, and iteration notes here later.
+        </p>
+      </section>
+
+      <section
+        id="APISandIntegrations"
+        className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-8 lg:px-12"
+      >
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-orange-500">
+          APIs and Integrations
+        </p>
+        <h2 className="font-bricolage text-3xl tracking-tight text-gray-900">
+          API and Developer Tools/Stack
+        </h2>
+        <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
+          Technology Stack Details: React frontend, Node.js backend, AI tools (e.g., OpenAI API), and external book APIs (e.g., Google Books API). Discussion of how these technologies were integrated to support the platform's features and enhance the user experience.
         </p>
       </section>
     </main>
