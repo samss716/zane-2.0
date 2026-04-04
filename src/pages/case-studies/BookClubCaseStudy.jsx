@@ -9,7 +9,7 @@ export default function BookClubCaseStudy() {
         eyebrow="Case Study"
         title="RoundTbl"
         subtitle="Designing a more social and intuitive reading experience created for book lovers and discussion enthusiasts."
-        image="/media/web/roundtbl.png"
+        image="/media/web/rndtbl.png"
       />
 
       <CaseStudySectionNav
