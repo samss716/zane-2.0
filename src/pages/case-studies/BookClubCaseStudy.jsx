@@ -1,6 +1,7 @@
 import CaseStudyHero from "../../components/CaseStudyHero";
 import CaseStudySectionNav from "../../components/CaseStudySectionNav";
 import CaseStudyOverview from "../../components/CaseStudyOverview";
+import Counter from "../../components/Counter";
 
 export default function BookClubCaseStudy() {
   return (
@@ -58,7 +59,7 @@ To support this, I introduced AI-assisted tools designed to facilitate balanced 
         </p>
       </div>
 
-        <div className="mt-12">
+        <div className="mt-14">
           <img
             src="/media/web/rndtbl/rndtblsample.jpg"
             alt="Screenshot of the RoundTbl inspo"
@@ -82,7 +83,103 @@ To support this, I introduced AI-assisted tools designed to facilitate balanced 
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
           user research, findings, and design reasoning.
         </p>
-      </section>
+
+        {/* stats section */}
+        <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3">
+          <div>
+
+            <p className="text-4xl font-semibold text-gray-900">
+              <Counter end={58} />
+            </p>
+            <p className="mt-2 text-sm text-gray-500">
+              User Surverys
+            </p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-semibold text-gray-900">
+            <Counter end={10}  />
+            </p>
+            <p className="mt-2 text-sm text-gray-500">
+              Survey Questions
+            </p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-semibold text-gray-900">
+            <Counter end={5}/>
+            </p>
+            <p className="mt-2 text-sm text-gray-500">
+              User Engagments
+            </p>
+          </div>
+        </div>
+          
+          {/*insight card*/}
+         <div className="mt-12 rounded-2xl bg-gray-50 p-8 sm:p-10">
+    <h3 className="text-lg font-semibold text-gray-900">
+      Key Findings
+    </h3>
+
+    <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Row 1 */}
+      <div>
+        <p className="text-2xl font-semibold text-gray-900">
+          <Counter end={92} suffix="%" />
+        </p>
+        <p className="mt-2 text-sm text-gray-600">
+          prefer structured group decision-making when choosing books
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-semibold text-gray-900">
+          <Counter end={85} suffix="%" />
+        </p>
+        <p className="mt-2 text-sm text-gray-600">
+          feel current book selection processes are unfair or inconsistent
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-semibold text-gray-900">
+          <Counter end={78} suffix="%" />
+        </p>
+        <p className="mt-2 text-sm text-gray-600">
+          want visibility into other members’ preferences
+        </p>
+      </div>
+
+      {/* Row 2 */}
+      <div>
+        <p className="text-2xl font-semibold text-gray-900">
+          <Counter end={81} suffix="%" />
+        </p>
+        <p className="mt-2 text-sm text-gray-600">
+          are more engaged when voting is simple and transparent
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-semibold text-gray-900">
+          <Counter end={74} suffix="%" />
+        </p>
+        <p className="mt-2 text-sm text-gray-600">
+          prefer digital tools over manual coordination
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-semibold text-gray-900">
+          <Counter end={69} suffix="%" />
+        </p>
+        <p className="mt-2 text-sm text-gray-600">
+          want reminders and progress tracking for reading
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section
         id="design"
