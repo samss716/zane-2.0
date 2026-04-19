@@ -1,5 +1,5 @@
 import LetterDrop from "../components/LetterAni.jsx";
-import ModelCanvas from "../components/GlbCanvas.jsx";
+import ModelCanvas from "../components/GlbCanvas.jsx"; 
 import Marquee from "../components/Marquee.jsx";
 import PortfolioPanels from "../components/PortfolioPanels.jsx";
 import Contact from "../components/Contact.jsx";
@@ -64,7 +64,7 @@ export default function HomePage() {
       bg-[radial-gradient(closest-side,rgba(149,117,255,0.35),rgba(117,177,255,0.12),transparent)]
     " />
 
-  <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 py-12 md:py-16">
+  <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 py-8 md:py-10">
 
     <div className="grid items-start gap-10 md:gap-14 lg:gap-16 md:grid-cols-[1.5fr_1fr_0.7fr]">
       {/* Left: 3D model */}
@@ -135,36 +135,9 @@ export default function HomePage() {
 </section>
 
       {/* Portfolio */}
-<section id="portfolio" className="scroll-mt-20 bg-[#f5f5f5] py-14">
-  <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12">
-    <h2 className="font-bricolage text-4xl">Portfolio Works</h2>
-    <p className="mt-3 text-lg text-gray-700">Explore my recent works!</p>
-
-    {/* Row: small GLB directly under header (left) + cards (right) */}
-    {/* Row: GLB + cards (stack on mobile) */}
-<div className="mt-6 flex flex-col md:flex-row items-start gap-6">
-  {/* LEFT: compact GLB */}
-  <div className="shrink-0 mx-auto md:mx-0">
-    <div className="h-[200px] w-[320px] md:h-[240px] md:w-[360px] overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
-      <ModelCanvas
-        url="/littledrfummerboi.glb"   // <- looks like you had a typo here
-        rotation={[0, -Math.PI / 2, 0]}
-        envPreset="night"
-        envIntensity={1.2}
-        scale={1}
-        interactive
-      />
-    </div>
-  </div>
-
-  {/* RIGHT: panels */}
-  <div className="flex-1 w-full">
-    <PortfolioPanels embedded />
-  </div>
-</div>
-</div>
-</section>
-
+    <section id="portfolio" className="scroll-mt-20 bg-[#f5f5f5] py-10">
+      <PortfolioPanels />
+    </section>
 
       {/* Contact */}
       <Contact
