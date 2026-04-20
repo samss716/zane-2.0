@@ -9,7 +9,7 @@ export default function TraditionalLayout() {
     src="/media/traditional/bird.jpeg"
     alt=""
     aria-hidden="true"
-    className="absolute inset-0 z-0 h-full w-full object-cover object-[center_25%]"
+    className="absolute inset-0 z-0 h-full w-full object-cover object-[center_5%]"
   />
 
   <div className="absolute inset-0 z-[1] bg-black/20" />
