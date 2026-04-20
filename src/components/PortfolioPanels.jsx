@@ -3,24 +3,6 @@ import { useNavigate } from "react-router-dom";
 export default function PortfolioPanels() {
   const navigate = useNavigate();
 
-  const items = [
-    {
-      title: "3D Works & Animations",
-      image: "/media/traditional/bird.jpeg", // replace later
-      route: "/portfolio",
-    },
-    {
-      title: "Web Designs & Projects",
-      image: "/media/web/rndtbl/rtcs.png",
-      route: "/web-design",
-    },
-    {
-      title: "Traditional Works",
-      image: "/media/traditional/portraits/Portrait_01.jpg",
-      route: "/traditional",
-    },
-  ];
-
   return (
     <section className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 py-16">
       
@@ -33,46 +15,49 @@ export default function PortfolioPanels() {
       </div>
 
       {/* Grid */}
-      <div className="grid gap-8 md:gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, i) => (
-          <PreviewCard
-            key={i}
-            {...item}
-            onClick={() => navigate(item.route)}
-          />
-        ))}
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <Card
+          imageSrc="/media/3dmodels/pendulum.png"
+          title="3D Works & Animations"
+          onClick={() => navigate("/portfolio/3d-models")}
+        />
+        <Card
+          imageSrc="/media/web/rndtbl/rtcs.png"
+          title="Web Designs & Projects"
+          onClick={() => navigate("/web-design")}
+        />
+        <Card
+          imageSrc="/media/traditional/bird.jpeg"
+          title="Traditional Works"
+          onClick={() => navigate("/traditional/portraits")}
+        />
       </div>
     </section>
   );
 }
 
-function PreviewCard({ title, image, onClick }) {
+function Card({ title, imageSrc, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="group relative w-full h-72 rounded-2xl overflow-hidden border border-black/10"
+      className="group relative w-full h-64 rounded-2xl overflow-hidden border border-black/10"
     >
-      {/* Image */}
       <img
-        src={image}
+        src={imageSrc}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6">
-        
-        {/* Text container */}
-        <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
-          
+      <div className="absolute inset-0 flex items-end justify-center text-center p-6">
+        <div>
           <h3 className="text-white text-xl md:text-2xl font-semibold tracking-tight">
             {title}
           </h3>
-
-          <p className="mt-2 text-sm text-white/80">
+          <p className="mt-1 text-sm text-white/80">
             View Project →
           </p>
         </div>
