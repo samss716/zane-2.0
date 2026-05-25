@@ -16,6 +16,7 @@ import NewMediaCaseStudy from "./pages/case-studies/NewMediaCaseStudy.jsx";
 const ThreeDModelsPage = lazy(() => import("./pages/ThreeDModels.jsx"));
 const SimulationsPage = lazy(() => import("./pages/Simulations.jsx"));
 const VideoWorksPage = lazy(() => import("./pages/VideoWorks.jsx"));
+const EspressoPage = lazy(() => import("./pages/Espresso.jsx"));
 const ArchivePage = lazy(() => import("./pages/Archive.jsx"));
 
 const router = createBrowserRouter([
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
           { path: "3d-models", element: <ThreeDModelsPage /> },
           { path: "simulations", element: <SimulationsPage /> },
           { path: "video-works", element: <VideoWorksPage /> },
+          { path: "espresso-collection", element: <EspressoPage /> },
           { path: "archive", element: <ArchivePage /> },
         ]
       },

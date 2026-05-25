@@ -7,6 +7,7 @@ export default function ProjectGrid({ dataUrl = "/data/projects.json", collectio
 
   useEffect(() => {
     let mounted = true;
+
     fetch(dataUrl)
       .then((r) => {
         if (!r.ok) throw new Error(`Fetch ${r.status}`);
@@ -69,11 +70,9 @@ export default function ProjectGrid({ dataUrl = "/data/projects.json", collectio
 
 function FlipCard({ item }) {
   const [flipped, setFlipped] = useState(false);
-  const videoRef = useRef(null);
 
   const toggle = () => setFlipped((v) => !v);
   const onKey = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } };
-  useEffect(() => { if (videoRef.current && flipped) videoRef.current.pause(); }, [flipped]);
 
   return (
     <div className="flip-scene">
@@ -91,18 +90,7 @@ function FlipCard({ item }) {
       >
         {/* FRONT: video only */}
         <div className="flip-face flip-front absolute inset-0">
-          <video
-            ref={videoRef}
-            className="h-full w-full object-cover"
-            src={item.src}
-            muted
-            playsInline
-            preload="metadata"
-            onMouseEnter={(e) => e.currentTarget.play().catch(() => {})}
-            onFocus={(e) => e.currentTarget.play().catch(() => {})}
-            onMouseLeave={(e) => e.currentTarget.pause()}
-            onBlur={(e) => e.currentTarget.pause()}
-          />
+          <ProjectMedia item={item} />
         </div>
 
         {/* BACK: details */}
@@ -119,5 +107,45 @@ function FlipCard({ item }) {
         </div>
       </div>
     </div>
+  );
+}
+
+{/*adjustment funct to allow for both mp4 and pngs*/}
+function ProjectMedia({ item }) {
+  const videoRef = useRef(null);
+
+  const src = item.src || "";
+
+  const isVideo =
+    src.endsWith(".mp4") ||
+    src.endsWith(".webm") ||
+    src.endsWith(".mov");
+
+  if (isVideo) {
+    return (
+      <video
+        ref={videoRef}
+        className="h-full w-full object-cover"
+        src={src}
+        poster={item.poster}
+        muted
+        playsInline
+        loop
+        preload="metadata"
+        onMouseEnter={(e) => e.currentTarget.play().catch(() => {})}
+        onFocus={(e) => e.currentTarget.play().catch(() => {})}
+        onMouseLeave={(e) => e.currentTarget.pause()}
+        onBlur={(e) => e.currentTarget.pause()}
+      />
+    );
+  }
+
+  return (
+    <img
+      className="h-full w-full object-cover"
+      src={src}
+      alt={item.title}
+      loading="lazy"
+    />
   );
 }

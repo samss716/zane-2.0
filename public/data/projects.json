@@ -108,7 +108,15 @@
     "year": "2023",
     "collection": "video"
   },
-
+  {
+    "id": "e1",
+    "title": "espresso-collection",
+    "src": "/media/espresso/Trial4.png",
+    "description": "Documentation of modeled espresso machine with FLIP fluid simulated espresso and steam simualtion.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "espresso"
+  },
   {
     "id": "a1",
     "title": "16mm.mp4",
@@ -118,4 +126,5 @@
     "year": "2021",
     "collection": "archive"
   }
+
 ]

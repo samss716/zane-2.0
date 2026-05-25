@@ -30,6 +30,7 @@ export default function Portfolio() {
           <Tab to="/portfolio/3d-models" label="3D Models" />
           <Tab to="/portfolio/simulations" label="Simulations" />
           <Tab to="/portfolio/video-works" label="Video Works" />
+          <Tab to="/portfolio/espresso-collection" label="Espresso Collection" />
           <Tab to="/portfolio/archive" label="Archive" />
         </nav>
       </div>
