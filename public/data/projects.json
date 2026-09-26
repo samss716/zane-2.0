@@ -118,6 +118,24 @@
     "collection": "espresso"
   },
   {
+    "id": "e2",
+    "title": "espresso-collection",
+    "src": "/media/espresso/fluid_sim_esp.png",
+    "description": "Documentation of modeled espresso machine with FLIP fluid simulated espresso and steam simualtion.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "espresso"
+  },
+  {
+    "id": "e3",
+    "title": "espresso-collection",
+    "src": "/media/espresso/moka-pot.png",
+    "description": "Moka pot modeled espresso machine with fluid simulated espresso simualtion.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "espresso"
+  },
+  {
     "id": "a1",
     "title": "16mm.mp4",
     "src": "/media/archive/16mm.mp4",
