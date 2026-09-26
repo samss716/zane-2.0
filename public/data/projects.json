@@ -36,6 +36,15 @@
     "collection": "3d"
   },
   {
+    "id": "p5",
+    "title": "tree",
+    "src": "/media/3dmodels/tree.png",
+    "description": "Rendered with Eevee.",
+    "medium": "3D (image)",
+    "year": "2025",
+    "collection": "3d"
+  },
+  {
     "id": "s1",
     "title": "fire-particles",
     "src": "/media/simulations/fire-particles.mp4",
