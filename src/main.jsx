@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 import "./index.css";
 import App from "./App.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import Portfolio from "./pages/portfolio.jsx";
+import Portfolio from "./pages/Portfolio.jsx";
 import TraditionalLayout from "./components/TradLayout.jsx";
 import CollectionStrip from "./components/TradStrip.jsx";
 import WebDesign from "./pages/WebDesigns.jsx";
