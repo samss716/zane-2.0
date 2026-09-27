@@ -139,7 +139,16 @@
     "id": "e3",
     "title": "espresso-collection",
     "src": "/media/espresso/moka-pot.png",
-    "description": "Moka pot modeled espresso machine with fluid simulated espresso simualtion.",
+    "description": "Moka pot modeled espresso machine with espresso fluid simulation.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "espresso"
+  },
+  {
+    "id": "e4",
+    "title": "espresso-collection",
+    "src": "/media/espresso/coffee_sim.png",
+    "description": "Portafilter fluid sim.",
     "medium": "3D (image)",
     "year": "2026",
     "collection": "espresso"

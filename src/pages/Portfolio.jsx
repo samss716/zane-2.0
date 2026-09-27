@@ -12,7 +12,7 @@ export default function Portfolio() {
            <div className="relative overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5 mb-4">
             <video
               className="h-[35vh] md:h-[50vh] w-full object-cover"
-              src="/media/3dmodels/soundwaves.mp4" 
+              src="/media/lumia-abstract.mp4" 
               autoPlay
               muted
               loop
@@ -28,9 +28,9 @@ export default function Portfolio() {
       <div className="sticky top-16 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-sm">
         <nav className="mx-auto flex max-w-6xl items-center gap-6 px-6 sm:px-8 lg:px-12 h-12">
           <Tab to="/portfolio/3d-models" label="3D Models" />
+          <Tab to="/portfolio/espresso-collection" label="Espresso Collection" />
           <Tab to="/portfolio/simulations" label="Simulations" />
           <Tab to="/portfolio/video-works" label="Video Works" />
-          <Tab to="/portfolio/espresso-collection" label="Espresso Collection" />
           <Tab to="/portfolio/archive" label="Archive" />
         </nav>
       </div>
