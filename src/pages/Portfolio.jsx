@@ -29,6 +29,7 @@ export default function Portfolio() {
         <nav className="mx-auto flex max-w-6xl items-center gap-6 px-6 sm:px-8 lg:px-12 h-12">
           <Tab to="/portfolio/3d-models" label="3D Models" />
           <Tab to="/portfolio/espresso-collection" label="Espresso Collection" />
+          <Tab to="/portfolio/fluid-sims" label="Fluid Sims" />
           <Tab to="/portfolio/simulations" label="Simulations" />
           <Tab to="/portfolio/video-works" label="Video Works" />
           <Tab to="/portfolio/archive" label="Archive" />

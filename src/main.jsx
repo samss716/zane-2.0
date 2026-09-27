@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 import "./index.css";
 import App from "./App.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import Portfolio from "./pages/Portfolio.jsx";
+import Portfolio from "./pages/portfolio.jsx";
 import TraditionalLayout from "./components/TradLayout.jsx";
 import CollectionStrip from "./components/TradStrip.jsx";
 import WebDesign from "./pages/WebDesigns.jsx";
@@ -17,6 +17,7 @@ const ThreeDModelsPage = lazy(() => import("./pages/ThreeDModels.jsx"));
 const SimulationsPage = lazy(() => import("./pages/Simulations.jsx"));
 const VideoWorksPage = lazy(() => import("./pages/VideoWorks.jsx"));
 const EspressoPage = lazy(() => import("./pages/Espresso.jsx"));
+const FluidPage = lazy(() => import("./pages/Fluid.jsx"));
 const ArchivePage = lazy(() => import("./pages/Archive.jsx"));
 
 const router = createBrowserRouter([
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
           { path: "simulations", element: <SimulationsPage /> },
           { path: "video-works", element: <VideoWorksPage /> },
           { path: "espresso-collection", element: <EspressoPage /> },
+          { path: "fluid-sims", element: <FluidPage /> },
           { path: "archive", element: <ArchivePage /> },
         ]
       },

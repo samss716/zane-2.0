@@ -11,7 +11,7 @@
   {
     "id": "p2",
     "title": "robot",
-    "src": "/media/3dmodels/robot.mp4",
+    "src": "/media/3dmodels/robot2.mp4",
     "description": "Textures created with use of HDRIs and other shader properties to create rough surface and screen. Axis applied and parented to control wheel movement. Rendered in Cycles.",
     "medium": "3D (video export)",
     "year": "2024",
@@ -43,6 +43,24 @@
     "medium": "3D (image)",
     "year": "2025",
     "collection": "3d"
+  },
+  {
+    "id": "p6",
+    "title": "portafilter",
+    "src": "/media/3dmodels/portafilter.png",
+    "description": "Rendered with Eevee.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "3d"
+  },
+   {
+    "id": "f1",
+    "title": "cereal",
+    "src": "/media/fluid-sims/cereal_06.png",
+    "description": "Fluid Simulation development of a cereal particle system.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "fluid"
   },
   {
     "id": "s1",
@@ -149,6 +167,24 @@
     "title": "espresso-collection",
     "src": "/media/espresso/coffee_sim.png",
     "description": "Portafilter fluid sim.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "espresso"
+  },
+  {
+    "id": "e5",
+    "title": "espresso-collection",
+    "src": "/media/espresso/fluid_sim_esp.png",
+    "description": "Espresso machine fluid sim.",
+    "medium": "3D (image)",
+    "year": "2026",
+    "collection": "espresso"
+  },
+  {
+    "id": "e6",
+    "title": "espresso-collection",
+    "src": "/media/espresso/moka_sim.png",
+    "description": "Moka pot fluid sim.",
     "medium": "3D (image)",
     "year": "2026",
     "collection": "espresso"
