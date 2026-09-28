@@ -163,15 +163,6 @@
     "collection": "espresso"
   },
   {
-    "id": "e4",
-    "title": "espresso-collection",
-    "src": "/media/espresso/coffee_sim.png",
-    "description": "Portafilter fluid sim.",
-    "medium": "3D (image)",
-    "year": "2026",
-    "collection": "espresso"
-  },
-  {
     "id": "e5",
     "title": "espresso-collection",
     "src": "/media/espresso/esp_sim_2.png",
