@@ -86,7 +86,7 @@ export default function HomePage() {
           I specialize in creating interactive digital experiences that blend art and technology.
          
           As a highly curious individual I am engrossed in furthering my artistic and computational practices. 
-          I am interested in fields related to animation, interactive design, human computer interactions, UI/UX design, 
+          I am interested in fields related to 3D/VFX, animation, Simulaton design, human computer interactions, UI/UX design, 
           and AI/machine learning. I intend to create work that explores the merging of our physical world with the digital.
         </p>
       </div>
@@ -102,7 +102,7 @@ export default function HomePage() {
 
     <div className="mt-3 text-md text-gray-700">
       <div className="font-medium text-gray-900">Zane</div>
-      <div>web / creative tech</div>
+      <div>web / 3D / creative tech</div>
     </div>
 
     {/* socials */}
