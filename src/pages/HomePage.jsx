@@ -21,10 +21,14 @@ export default function HomePage() {
             {/* LEFT: 3D model */}
             <div className="w-full md:w-[60%]">
 
-               <VideoLoop
-                src="/media/lumia-abstract.mp4"
-                // poster="/media/hero-poster.jpg"
-              />
+               <video 
+            src="/media/demo1.mp4" 
+            controls 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          />
             </div>
 
             {/* RIGHT: Title */}
