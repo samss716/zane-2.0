@@ -28,8 +28,15 @@ export default function HomePage() {
             muted 
             loop 
             playsInline
+            ref={(el) => { if (el) el.muted = true; }}
+            style={{ 
+              width: '100%', 
+              height: 'auto',
+              borderRadius: '12px', 
+              overflow: 'hidden'
+            }}
           />
-            </div>
+          </div>
 
             {/* RIGHT: Title */}
             <div className="w-full text-center md:w-[40%] md:text-left">
