@@ -22,7 +22,7 @@ export default function HomePage() {
             <div className="w-full md:w-[60%]">
 
                <video 
-            src="/media/demo1.mp4" 
+            src="/media/demo2.mp4" 
             controls 
             autoPlay 
             muted 
