@@ -123,7 +123,8 @@ export default function HomePage() {
       {/* Instagram */}
       <a href="https://www.instagram.com/samdigikive" target="_blank" rel="noopener noreferrer"
          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
-         aria-label="Instagram">
+         aria-label="Instagram"
+          title="View Instagram">
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
@@ -133,7 +134,9 @@ export default function HomePage() {
       {/* LinkedIn */}
       <a href="https://www.linkedin.com/in/samantha-sanchez-0a1637297" target="_blank" rel="noopener noreferrer"
          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
-         aria-label="LinkedIn">
+         aria-label="LinkedIn"
+        title="View LinkedIn">
+
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2Zm2-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
         </svg>
@@ -141,11 +144,37 @@ export default function HomePage() {
       {/* Github */}
       <a href="https://github.com/samss716" target="_blank" rel="noopener noreferrer"
          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
-         aria-label="Github">
+         aria-label="Github"
+         title="View Github">
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 3.58 8 8 8s8-3.58 8-8c0-4.42-3.58-8-8-8zm0 14.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
         </svg>
       </a>
+      {/*resume*/}
+      {/* Resume */}
+<a
+  href="/media/sam_z_sanchez_shpe.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
+  aria-label="View Resume"
+  title="View Resume"
+>
+  <svg
+    viewBox="0 0 24 24"
+    className="h-5 w-5"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <path d="M14 2v6h6" />
+    <path d="M8 13h8" />
+    <path d="M8 17h8" />
+  </svg>
+</a>
     </div>
   </div>
 </aside>
