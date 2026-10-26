@@ -153,7 +153,7 @@ export default function HomePage() {
       {/*resume*/}
       {/* Resume */}
 <a
-  href="/media/sam_z_sanchez_shpe.pdf"
+  href="/media/sam_z_sanchez_2026.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm hover:bg-black/5"
