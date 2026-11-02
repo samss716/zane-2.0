@@ -112,7 +112,7 @@
     "id": "v3",
     "title": "ascii-vid.mp4",
     "src": "/media/video/ascii-vid.mp4",
-    "description": "Created through use of a blender shader system that takes string input converted with colorramps to effect the shading of the iamge. Utilization of found footage. This piece was made to reflect feelings of eerie nostalgia.",
+    "description": "Created through use of a blender ASCII shader system that takes string input converted with colorramps to effect the shading of the image. Utilization of found footage. This piece was made to reflect feelings of eerie nostalgia.",
     "medium": "Blender Shaders",
     "year": "2023",
     "collection": "video"

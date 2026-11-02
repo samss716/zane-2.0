@@ -60,7 +60,7 @@ export default function NewMediaCaseStudy() {
           Research and insights
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
-          User research, findings, or design reasoning here later.
+          User research, findings, or design reasoning to be documented and refined throughout the design process.
         </p>
       </section>
 
@@ -75,7 +75,7 @@ export default function NewMediaCaseStudy() {
           Prototyping and iteration
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
-          Wireframes, prototypes, interaction ideas, and iteration notes here later.
+          Wireframes, prototypes, interaction ideas, and iteration notes to be documented and refined throughout the design process.
         </p>
       </section>
     </main>
