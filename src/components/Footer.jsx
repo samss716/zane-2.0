@@ -16,9 +16,12 @@ export default function Footer() {
 
           {/* Right */}
           <nav className="text-sm text-right">
-            <a href="#contact" className="hover:text-white">
+            <a
+              href="mailto:samanthasanchez887@gmail.com"
+              className="hover:text-white"
+            >
               Contact
-            </a> 
+            </a>
           </nav>
 
         </div> 
