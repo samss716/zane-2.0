@@ -220,7 +220,7 @@ To support this, I introduced AI-assisted tools designed to facilitate balanced 
           Prototyping and iteration
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-gray-700">
-          wireframes, prototypes, interaction ideas, and iteration notes here later.
+          wireframes, prototypes, interaction ideas, and iteration notes to be documented and refined throughout the design process.
         </p>
       </section>
 
