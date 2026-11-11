@@ -98,6 +98,7 @@
         </div>
         <div class="actions">
           <button id="reset">Reset sliders</button>
+          <button id="download" class="secondary">Download preview</button>
         </div>
         <div id="status" class="status" role="status">Loading…</div>
       </div>
@@ -139,7 +140,13 @@
   </section>
 
   <section>
-    <div class="code-top"><h2>03 / Shader source</h2><span class="tag">WebGL / GLSL ES</span></div>
+    <div class="code-top">
+      <h2>03 / Shader source</h2>
+      <div>
+        <span class="tag">WebGL / GLSL ES</span>
+        <button id="copyCode" class="secondary" type="button">Copy shader source</button>
+      </div>
+    </div>
     <div class="code-window">
       <div class="code-titlebar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="code-title">solar-flow.frag · GLSL</span></div>
       <pre class="shader-code"><code id="shaderCode"></code></pre>
