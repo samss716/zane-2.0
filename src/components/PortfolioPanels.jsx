@@ -24,7 +24,7 @@ export default function PortfolioPanels() {
         <Card
           imageSrc="/media/helmet_normal_map.png"
           title="Shaders"
-          onClick={() => navigate("/shaders/index.html")}
+          onClick={() => window.location.assign("/shaders/index.html")}
         />
         <Card
           imageSrc="/media/web/rndtbl/rtcs.png"
