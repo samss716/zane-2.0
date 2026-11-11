@@ -20,10 +20,15 @@ export default function PortfolioPanels() {
           imageSrc="/media/3dmodels/pendulum.png"
           title="3D Works & Animations"
           onClick={() => navigate("/portfolio/3d-models")}
+        /> 
+        <Card
+          imageSrc="/media/helmet_normal_map.png"
+          title="Shaders"
+          onClick={() => navigate("/shaders/index.html")}
         />
         <Card
           imageSrc="/media/web/rndtbl/rtcs.png"
-          title="Web Designs & Projects"
+          title="Web Designs & Case Studies"
           onClick={() => navigate("/web-design")}
         />
         <Card
@@ -58,7 +63,7 @@ function Card({ title, imageSrc, onClick }) {
             {title}
           </h3>
           <p className="mt-1 text-sm text-white/80">
-            View Project →
+            View Projects →
           </p>
         </div>
       </div>

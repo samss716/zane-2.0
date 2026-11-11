@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iridescent Snake Shader</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:16px/1.55 Arial,Helvetica,sans-serif;color:#222;
+    background: linear-gradient(
+        135deg,
+        #061f16 0%,
+        #0b3525 50%,
+        #102b20 100%
+    );
+    color: #f1f5f0;
+}main{max-width:1000px;margin:0 auto;padding:28px 20px 48px}header{margin-bottom:26px}h1{font-size:2rem;margin:0 0 6px}h2{font-size:1.45rem;margin:0 0 14px}h3{font-size:1.05rem;margin:18px 0 6px}p{margin:6px 0 12px}.section{body {
+    background: linear-gradient(
+        135deg,
+        #061f16 0%,
+        #0b3525 50%,
+        #102b20 100%
+    );
+    color: #f1f5f0;
+};border:1px solid #ddd;border-radius:8px;padding:22px;margin:18px 0}.video-wrap{background:#111;padding:8px;border-radius:5px}.video-wrap video{display:block;width:100%;max-height:580px;background:#000}.muted{color:#666;font-size:.92rem}.code-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px;background:#000000;border:1px solid #ddd;border-bottom:0}button{padding:7px 12px;cursor:pointer;border:1px solid #aaa;border-radius:4px;background:white}pre{margin:0;padding:16px;overflow:auto;max-height:720px;background:#171717;color:#eee;font:13px/1.5 Consolas,Monaco,monospace;white-space:pre}.steps{padding-left:22px}.steps li{margin:10px 0}.channels{border-collapse:collapse;width:100%;margin:10px 0}.channels th,.channels td{border:1px solid #ddd;padding:8px;text-align:left;vertical-align:top}.channels th{background:#000000}.tag{font-weight:bold;color:#f7f5f5;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:650px){.two-col{grid-template-columns:1fr}.section{padding:16px}main{padding:18px 12px}}
+
+  .channels {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .channels th,
+  .channels td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #3d7656;
+  }
+
+  .map-preview {
+    display: block;
+    width: 150px;
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
+    background: #10251c;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .channels td p {
+    margin: 0;
+  }
+
+</style>
+</head>
+<body><main>
+<header><h1>Iridescent Snake Shader</h1><p>A Shadertoy 2.5D shader using a normal map, diffuse and specular lighting, thin-film-inspired color, and Voronoi-based variation.</p></header>
+<section class="section" id="video"><div class="tag">Section 1</div><h2>Example video</h2>
+<div class="video-wrap"><video controls playsinline preload="metadata"><source src="/public/shaders/projects/media/snakev3.mp4" type="video/mp4">Your browser does not support HTML video.</video></div>
+<section class="section" id="code"><div class="tag">Section 2</div><h2>Final shader code</h2><p>Shadertoy channels: iChannel0 = normal map, iChannel1 = snake albedo, iChannel2 = specular map, iChannel3 = ambient occlusion map.</p>
+<div class="code-head"><span>GLSL · Shadertoy</span><button onclick="copyShader()" type="button">Copy code</button></div><pre><code id="shaderCode">
+
+#define PI 3.14159265
+
+// Convert HSV color to RGB.
+// Hue controls the color, saturation controls its intensity,
+// and value controls its brightness.
+vec3 HSVtoRGB(vec3 c)
+{
+    vec3 rgb = clamp(
+        abs(mod(c.x * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0)
+        - 1.0,
+        0.0,
+        1.0
+    );
+
+    rgb = rgb * rgb * (3.0 - 2.0 * rgb);
+
+    return c.z * mix(vec3(1.0), rgb, c.y);
+}
+
+// Voronoi pattern used to vary the iridescence.
+float voronoi(vec2 uv)
+{
+    vec2 cell = floor(uv);
+    vec2 localUV = fract(uv);
+
+    float minDist = 1.0;
+
+    for (int y = -1; y &lt;= 1; y++)
+    {
+        for (int x = -1; x &lt;= 1; x++)
+        {
+            vec2 neighbor = vec2(float(x), float(y));
+            vec2 point = neighbor;
+
+            float seed = sin(
+                dot(cell + neighbor, vec2(127.1, 311.7))
+            ) * 43758.5453;
+
+            point += vec2(
+                fract(seed),
+                fract(seed * 1.2154)
+            );
+
+            float dist = length(localUV - point);
+
+            minDist = min(minDist, dist);
+        }
+    }
+
+    return minDist;
+}
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord)
+{
+    vec2 uv = fragCoord / iResolution.xy;
+
+    // Texture maps
+    vec3 normalSample = texture(iChannel0, uv).rgb;
+    vec3 albedo = texture(iChannel1, uv).rgb;
+    float Ks = texture(iChannel2, uv).r;
+    float AO = texture(iChannel3, uv).r;
+
+    // Surface normal from the normal map
+    vec3 N = normalize(normalSample * 2.0 - 1.0);
+
+    // Fixed view direction
+    vec3 V = vec3(0.0, 0.0, 1.0);
+
+    // Fixed light direction for diffuse illumination
+    vec3 L = normalize(vec3(-0.4, 0.6, 1.0));
+
+    float ndotl = max(dot(N, L), 0.0);
+    float ndotv = max(dot(N, V), 0.0);
+
+    // Basic ambient and diffuse lighting
+    float Kd = 0.9;
+    float Ka = 0.15;
+
+    vec3 ambient = albedo * Ka * AO;
+    vec3 diffuse = albedo * Kd * ndotl;
+
+    // Identify the snake based on the albedo brightness to keep background dark
+    float brightness = dot(
+        albedo,
+        vec3(0.299, 0.587, 0.114)
+    );
+
+    float snakeMask = smoothstep(0.025, 0.16, brightness);
+
+    // Angle-based iridescence, following the class-style approach.
+    // The hue changes as the surface normal turns away from the viewer.
+    float angle = 1.0 - ndotv;
+
+    // Voronoi variation changes the hue across the surface.
+    vec2 scaleUV = uv * vec2(24.0, 36.0);
+    float cellDist = voronoi(scaleUV);
+
+    float scaleVariation = smoothstep(0.05, 0.65, cellDist);
+
+    float hue = fract(0.55 + angle * 0.35 + scaleVariation * 0.06); //color control
+
+    vec3 iriColor = HSVtoRGB(
+        vec3(hue, 0.8, 1.0)
+    );
+
+    // Blend iridescence with the original snake color
+    float iriStrength = 0.60;
+
+    vec3 baseColor = mix(
+        albedo,
+        iriColor,
+        iriStrength * snakeMask
+    );
+
+    // Apply diffuse lighting to the iridescent base color
+    diffuse = baseColor * Kd * ndotl;
+
+    // Mouse-controlled specular highlight
+    vec2 mousePixel = iMouse.xy;
+
+    // Using the screen center when the mouse has not been positioned
+    if (mousePixel.x == 0.0 && mousePixel.y == 0.0)
+    {
+        mousePixel = 0.5 * iResolution.xy;
+    }
+
+    float lightHeight = 250.0;
+
+    vec3 lightPosition = vec3(mousePixel, lightHeight);
+    vec3 surfacePosition = vec3(fragCoord, 0.0);
+
+    vec3 Lspec = normalize(lightPosition - surfacePosition);
+    vec3 H = normalize(Lspec + V);
+
+    float ndoth = max(dot(N, H), 0.0);
+    float shininess = 20.0;
+
+    float specularStrength = pow(ndoth, shininess) * Ks;
+
+    vec3 specular = vec3(1.0) * specularStrength * 0.8;
+
+    // Combine lighting
+    vec3 finalColor = ambient + diffuse + specular;
+
+    finalColor = max(finalColor, vec3(0.0));
+
+    // Gamma correction
+    finalColor = pow(finalColor, vec3(1.0 / 2.2));
+
+    fragColor = vec4(finalColor, 1.0);
+}</code></pre><p id="copyStatus" class="muted" aria-live="polite"></p></section>
+<section class="section" id="examples"><div class="tag">Section 3</div><h2>Development steps and examples</h2>
+<ol class="steps">
+<li><strong>Display and assign the maps.</strong> The normal map supplies per-pixel surface orientation, the albedo supplies the snake's color, the specular map controls highlight strength, and the AO map darkens the ambient contribution. The final shader samples these maps rather than only displaying them.</li>
+<li><strong>Add diffuse lighting.</strong> The shader calculates <code>max(dot(N, L), 0.0)</code>. This Lambert-style term brightens surfaces facing the fixed light and darkens surfaces facing away.</li>
+<li><strong>Add specular highlights.</strong> Blinn–Phong shading uses <code>H = normalize(Lspec + V)</code>. The specular map scales the highlight, and <code>iMouse</code> moves the point light. Diffuse lighting stays fixed.</li>
+<li><strong>Add iridescence.</strong> I implemented iridescence using HSV color conversion. The shader calculates the angle between the surface normal and the fixed view direction, then uses this value to influence the hue.</li>
+<li><strong>Add Voronoi variation.</strong> I added a Voronoi pattern to introduce variation across the snake's scales. The shader calculates the distance to nearby procedural points and uses that value to adjust the hue. This adds localized color variation while preserving the underlying texture and surface detail.</li>
+<li><strong>Blend the iridescence with the original color.</strong> The shader blends the iridescent color with the original albedo using a mask based on texture brightness used to identify the snake. This ensures that the background remains dark while the snake exhibits vibrant iridescence.</li>
+</ol>
+
+<h3>Texture channels</h3>
+
+<table class="channels">
+  <thead>
+    <tr>
+      <th>Channel</th>
+      <th>Map</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>iChannel0</td>
+      <td>
+        <img src="/public/shaders/projects/media/snakev2_normal.jpeg" alt="Normal map"
+             class="map-preview">
+        <p>Normal</p>
+      </td>
+      <td>Defines surface orientation for lighting.</td>
+    </tr>
+    <tr>
+      <td>iChannel1</td>
+      <td>
+        <img src="/public/shaders/projects/media/albedov2.jpeg" alt="Albedo map"
+             class="map-preview">
+        <p>Albedo / color</p>
+      </td>
+      <td>Provides the snake's original color and a brightness-based subject mask.</td>
+    </tr>
+    <tr>
+      <td>iChannel2</td>
+      <td>
+        <img src="/public/shaders/projects/media/specularv2.jpeg" alt="Specular map"
+             class="map-preview">
+        <p>Specular</p>
+      </td>
+      <td>Red channel controls per-pixel specular strength.</td>
+    </tr>
+    <tr>
+      <td>iChannel3</td>
+      <td>
+        <img src="/public/shaders/projects/media/aov2.jpeg" alt="Ambient occlusion map"
+             class="map-preview">
+        <p>Ambient occlusion</p>
+      </td>
+      <td>Red channel scales ambient light.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>What came from the reference code?</h3>
+
+<div>
+  <strong>Course lighting reference</strong>
+  <p>
+    The normal-map decoding, fixed view direction, diffuse dot product,
+    Blinn–Phong lighting concepts, and combination of ambient, diffuse,
+    and specular terms follow the supplied lighting example.
+  </p>
+</div>
+
+
+<script>
+function copyShader(){const code=document.getElementById('shaderCode').textContent;const status=document.getElementById('copyStatus');if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(code).then(()=>status.textContent='Code copied.').catch(()=>fallbackCopy(code,status));}else{fallbackCopy(code,status)}}
+function fallbackCopy(code,status){const area=document.createElement('textarea');area.value=code;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');status.textContent='Code copied.'}catch(e){status.textContent='Copy was blocked. Select the code and copy it manually.'}area.remove()}
+</script></body></html>
