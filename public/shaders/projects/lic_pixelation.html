@@ -98,10 +98,8 @@
         </div>
         <div class="actions">
           <button id="reset">Reset sliders</button>
-          <button id="download" class="secondary">Save preview PNG</button>
-          <button id="copyCode" class="secondary">Copy shader source</button>
         </div>
-        <div id="status" class="status" role="status">Loading the two images…</div>
+        <div id="status" class="status" role="status">Loading…</div>
       </div>
       <div class="controls" aria-label="Shader controls">
         <div class="control">
@@ -117,7 +115,7 @@
         <div class="control">
           <div class="control-head"><label for="pixel">Pixelation</label><output id="pixelOut">1.0×</output></div>
           <input id="pixel" type="range" min="1" max="8" value="1" step=".25">
-          <p class="hint">Snaps the sampling coordinates to a coarser grid. Keep this low for a subtle finish.</p>
+          <p class="hint">Snaps the sampling coordinates to a coarser grid.</p>
         </div>
       </div>
     </div>
@@ -150,7 +148,7 @@
 
   <section>
     <h2>04 / Reference notes</h2>
-    <p>The implementation is informed by the directional filtering and image-gradient examples from Proffesor Akleman. The guide image's strongest local color change is treated as an approximate gradient direction, then rotated to obtain a contour-following tangent.</p>
+    <p>The implementation uses directional filtering and image-gradient examples. The guide image's strongest local color change is treated as an approximate gradient direction, then rotated to obtain a contour-following tangent.</p>
     <div class="reference">
       <h3>Primary class reference</h3>
       <p><strong>Ergun Akleman, professor-provided shader examples.</strong> The first example reads a control image and uses its red channel as an angle to build a direction vector. The second example estimates an image-gradient direction by comparing samples in multiple directions, rotates the gradient into a tangent, and filters along that tangent. This project follows the second strategy because the chosen swirl JPEG is an ordinary image rather than an angle-encoded vector map.</p>
