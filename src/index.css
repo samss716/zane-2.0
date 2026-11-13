@@ -80,6 +80,15 @@ body {
 }
 
 /* Scroll-triggered homepage reveals */
+.scroll-gradient {
+  transform: translate3d(
+    var(--scroll-gradient-x, 0px),
+    calc(-50% + var(--scroll-gradient-y, 0px)),
+    0
+  );
+  will-change: transform;
+}
+
 .scroll-reveal-ready [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(22px);
@@ -209,10 +218,6 @@ body {
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;
-  }
-
-  [data-scroll-gradient] {
-    rotate: none !important;
   }
 }
 

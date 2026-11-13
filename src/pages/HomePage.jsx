@@ -13,19 +13,14 @@ export default function HomePage() {
 
   useEffect(() => {
     const main = mainRef.current;
-    if (
-      !main ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
+    if (!main) return;
 
     const gradients = main.querySelectorAll("[data-scroll-gradient]");
     const aboutSection = main.querySelector("#about");
     if (!gradients.length || !aboutSection) return;
 
     let frameId = null;
-    const updateRotation = () => {
+    const updateGradientPosition = () => {
       frameId = null;
       const { top: sectionTop, height: sectionHeight } =
         aboutSection.getBoundingClientRect();
@@ -37,28 +32,38 @@ export default function HomePage() {
         ),
         1
       );
-      const rotation = `${-25 * progress}deg`;
 
-      gradients.forEach((gradient) => {
-        gradient.style.rotate = rotation;
+      gradients.forEach((gradient, index) => {
+        const direction = index === 0 ? 1 : -1;
+        gradient.style.setProperty(
+          "--scroll-gradient-x",
+          `${direction * 120 * progress}px`
+        );
+        gradient.style.setProperty(
+          "--scroll-gradient-y",
+          `${direction * 100 * progress}px`
+        );
       });
     };
 
-    const scheduleRotation = () => {
+    const scheduleGradientPosition = () => {
       if (frameId === null) {
-        frameId = window.requestAnimationFrame(updateRotation);
+        frameId = window.requestAnimationFrame(updateGradientPosition);
       }
     };
 
-    updateRotation();
-    window.addEventListener("scroll", scheduleRotation, { passive: true });
-    window.addEventListener("resize", scheduleRotation);
+    updateGradientPosition();
+    window.addEventListener("scroll", scheduleGradientPosition, { passive: true });
+    window.addEventListener("resize", scheduleGradientPosition);
 
     return () => {
-      window.removeEventListener("scroll", scheduleRotation);
-      window.removeEventListener("resize", scheduleRotation);
+      window.removeEventListener("scroll", scheduleGradientPosition);
+      window.removeEventListener("resize", scheduleGradientPosition);
       if (frameId !== null) window.cancelAnimationFrame(frameId);
-      gradients.forEach((gradient) => gradient.style.removeProperty("rotate"));
+      gradients.forEach((gradient) => {
+        gradient.style.removeProperty("--scroll-gradient-x");
+        gradient.style.removeProperty("--scroll-gradient-y");
+      });
     };
   }, []);
 
@@ -160,27 +165,25 @@ export default function HomePage() {
       </section>
 
     {/* About */}
-    <section id="about" className="relative scroll-mt-20 bg-[#f5f5f5]">
+    <section id="about" className="relative isolate scroll-mt-20 bg-[#f5f5f5]">
       {/* Background gradient */}
-      
-    <div className="pointer-events-none absolute inset-0 -z-10" />
     <div className="
-      absolute left-[0%] top-1/2 -translate-y-1/2
+      scroll-gradient pointer-events-none absolute left-[0%] top-1/2 z-0
       h-[60vmin] w-[55vmin] rounded-full blur-2xl opacity-100
-      bg-[radial-gradient(closest-side,rgba(255,122,122,0.35),rgba(255,122,122,0.12),transparent)]
+      bg-[radial-gradient(closest-side,rgba(255,122,122,0.5),rgba(255,122,122,0.22),transparent)]
     "
       data-scroll-gradient
     />
     {/* right purple/blue glow */}
     <div className="
-      absolute right-[0%] top-1/2 -translate-y-1/2
+      scroll-gradient pointer-events-none absolute right-[0%] top-1/2 z-0
       h-[60vmin] w-[55vmin] rounded-full blur-2xl opacity-100
-      bg-[radial-gradient(closest-side,rgba(149,117,255,0.35),rgba(117,177,255,0.12),transparent)]
+      bg-[radial-gradient(closest-side,rgba(149,117,255,0.5),rgba(117,177,255,0.22),transparent)]
     "
       data-scroll-gradient
     />
 
-  <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 py-8 md:py-10">
+  <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 py-8 md:py-10">
 
     <div className="grid items-center gap-10 md:gap-14 lg:gap-16 md:grid-cols-[1.5fr_1fr_0.7fr]">
       {/* Left: 3D model */}
