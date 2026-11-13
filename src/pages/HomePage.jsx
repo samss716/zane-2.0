@@ -29,7 +29,7 @@ export default function HomePage() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
     );
 
     main.classList.add("scroll-reveal-ready");
@@ -52,26 +52,35 @@ export default function HomePage() {
           {/*adjusting gap for better spacing between ani and txt */}
           <div className="flex flex-col items-center justify-center gap-25 md:flex-row md:items-center md:justify-between">
             {/* LEFT: 3D model */}
+            <div className="relative isolate w-full px-6 py-10">
+            {/* Ambient backlight */}
             <div
-              className="w-full md:w-[60%]"
+              className="
+                pointer-events-none absolute
+                inset-x-5 inset-y-5
+                rounded-[28px]
+                bg-black/12
+                blur-2xl
+                scale-105
+              "
               data-scroll-reveal
-            >
+            />
 
-               <video 
-            src="/media/demo2.mp4" 
-            controls 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            ref={(el) => { if (el) el.muted = true; }}
-            style={{ 
-              width: '100%', 
-              height: 'auto',
-              borderRadius: '12px', 
-              overflow: 'hidden'
-            }}
-          />
+            {/* Demo reel */}
+            <video
+              src="/media/demo2.mp4"
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="
+                relative block w-full h-auto
+                rounded-xl
+                border border-black/[0.05]
+                shadow-[0_2px_12px_rgba(0,0,0,0.06)]
+              "
+            />
           </div>
 
             {/* RIGHT: Title */}
