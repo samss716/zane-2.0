@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import LetterDrop from "../components/LetterAni.jsx";
 import ModelCanvas from "../components/GlbCanvas.jsx"; 
 import Marquee from "../components/Marquee.jsx";
@@ -7,9 +8,41 @@ import VideoLoop from "../components/VideoLoop.jsx";
 
 
 export default function HomePage() {
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    const main = mainRef.current;
+    if (
+      !main ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    main.classList.add("scroll-reveal-ready");
+    main.querySelectorAll("[data-scroll-reveal]").forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     // pt-20 offsets your fixed Navbar
-    <main className="relative min-h-screen bg-[#f5f5f5] pt-20">
+    <main ref={mainRef} className="relative min-h-screen bg-[#f5f5f5] pt-20">
       {/* HERO */}
       <section
         id="hero"
@@ -19,7 +52,10 @@ export default function HomePage() {
           {/*adjusting gap for better spacing between ani and txt */}
           <div className="flex flex-col items-center justify-center gap-25 md:flex-row md:items-center md:justify-between">
             {/* LEFT: 3D model */}
-            <div className="w-full md:w-[60%]">
+            <div
+              className="w-full md:w-[60%]"
+              data-scroll-reveal
+            >
 
                <video 
             src="/media/demo2.mp4" 
@@ -39,7 +75,11 @@ export default function HomePage() {
           </div>
 
             {/* RIGHT: Title */}
-            <div className="w-full text-center md:w-[40%] md:text-left">
+            <div
+              className="w-full text-center md:w-[40%] md:text-left"
+              data-scroll-reveal
+              style={{ "--reveal-delay": "100ms" }}
+            >
               <h1 className="font-bricolage text-5xl leading-[0.95] text-black md:text-6xl">
                 <LetterDrop text="Portfolio" delayStep={0.12} />
               </h1>
@@ -52,7 +92,7 @@ export default function HomePage() {
       </section>
 
       {/* Marquee / Intro */}
-      <section className="py-10">
+      <section className="py-10" data-scroll-reveal>
         <div className="mx-auto w-full max-w-6xl px-0 sm:px-0 lg:px-0">
         <Marquee className="bg-[#f5f5f5] py-6" />
         </div>
@@ -79,7 +119,7 @@ export default function HomePage() {
 
     <div className="grid items-start gap-10 md:gap-14 lg:gap-16 md:grid-cols-[1.5fr_1fr_0.7fr]">
       {/* Left: 3D model */}
-      <div className="order-1">
+      <div className="order-1" data-scroll-reveal>
         <div className="h-[260px] md:h-[360px] overflow-hidden rounded-2xl border border-black/5 shadow-sm">
           <ModelCanvas 
           url="/lumiaabstract.glb"
@@ -90,7 +130,11 @@ export default function HomePage() {
         </div>
       </div>
           
-    <div className="order-2">
+    <div
+      className="order-2"
+      data-scroll-reveal
+      style={{ "--reveal-delay": "100ms" }}
+    >
       <h2 className="font-bricolage text-4xl text-center">About Me</h2>
         <p className="mt-5 text-lg text-gray-800 text-center">
           Hello! I'm Zane, a New Media Artist and Developer based in Fort Worth, TX. 
@@ -102,7 +146,11 @@ export default function HomePage() {
         </p>
       </div>
 
-    <aside className="order-3 mt-8 md:mt-0 md:sticky md:top-24">
+    <aside
+      className="order-3 mt-8 md:mt-0 md:sticky md:top-24"
+      data-scroll-reveal
+      style={{ "--reveal-delay": "180ms" }}
+    >
   <div className="flex flex-col items-center text-center md:items-start md:text-left">
     <img
       src="/media/pfp.jpg"
@@ -187,16 +235,22 @@ export default function HomePage() {
 </section>
 
       {/* Portfolio */}
-    <section id="portfolio" className="scroll-mt-20 bg-[#f5f5f5] py-10">
+    <section
+      id="portfolio"
+      className="scroll-mt-20 bg-[#f5f5f5] py-10"
+      data-scroll-reveal
+    >
       <PortfolioPanels />
     </section>
 
       {/* Contact */}
-      <Contact
-        videoSrc="/media/sams.mp4"
-        leftQR="/media/qr/instagram.png"               
-        rightQR="/media/qr/instagram.png"
-      />
+      <div data-scroll-reveal>
+        <Contact
+          videoSrc="/media/sams.mp4"
+          leftQR="/media/qr/instagram.png"
+          rightQR="/media/qr/instagram.png"
+        />
+      </div>
 
     </main>
   );
