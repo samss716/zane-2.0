@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, lazy, Suspense } from "react";
 import LetterDrop from "../components/LetterAni.jsx";
-import ModelCanvas from "../components/GlbCanvas.jsx"; 
+{/*import ModelCanvas from "../components/GlbCanvas.jsx"; */}
 import Marquee from "../components/Marquee.jsx";
 import PortfolioPanels from "../components/PortfolioPanels.jsx";
 import Contact from "../components/Contact.jsx";
 import VideoLoop from "../components/VideoLoop.jsx";
 
+const ModelCanvas = lazy(() => import("../components/GlbCanvas.jsx"));
 
 export default function HomePage() {
   const mainRef = useRef(null);
@@ -126,16 +127,24 @@ export default function HomePage() {
 
   <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 py-8 md:py-10">
 
-    <div className="grid items-start gap-10 md:gap-14 lg:gap-16 md:grid-cols-[1.5fr_1fr_0.7fr]">
+    <div className="grid items-center gap-10 md:gap-14 lg:gap-16 md:grid-cols-[1.5fr_1fr_0.7fr]">
       {/* Left: 3D model */}
       <div className="order-1" data-scroll-reveal>
         <div className="h-[260px] md:h-[360px] overflow-hidden rounded-2xl border border-black/5 shadow-sm">
-          <ModelCanvas 
-          url="/lumiaabstract.glb"
-          rotation={[0, 0.2, 0]}
-          scale={1}
-          interactive={true}
-          />
+
+        
+          <Suspense fallback={
+            <div className="flex h-full w-full items-center justify-center">
+              <span className="text-sm text-gray-400">Loading 3D model...</span>
+            </div>
+          }>
+            <ModelCanvas 
+              url="/lumiaabstract.glb"
+              rotation={[0, 0.2, 0]}
+              scale={1}
+              interactive={true}
+            />
+          </Suspense>
         </div>
       </div>
           
