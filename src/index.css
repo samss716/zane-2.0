@@ -82,8 +82,8 @@ body {
 /* Scroll-triggered homepage reveals */
 .scroll-gradient {
   transform: translate3d(
-    var(--scroll-gradient-x, 0px),
-    calc(-50% + var(--scroll-gradient-y, 0px)),
+    calc(-50% + var(--gradient-offset-x, 0px)),
+    calc(-50% + var(--gradient-offset-y, 0px)),
     0
   );
   will-change: transform;

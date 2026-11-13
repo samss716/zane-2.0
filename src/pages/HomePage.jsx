@@ -1,4 +1,4 @@
-import { useEffect, useRef, lazy, Suspense } from "react";
+import { useCallback, useEffect, useRef, lazy, Suspense } from "react";
 import LetterDrop from "../components/LetterAni.jsx";
 {/*import ModelCanvas from "../components/GlbCanvas.jsx"; */}
 import Marquee from "../components/Marquee.jsx";
@@ -8,64 +8,106 @@ import VideoLoop from "../components/VideoLoop.jsx";
 
 const ModelCanvas = lazy(() => import("../components/GlbCanvas.jsx"));
 
+function positionGradientPair(section, angle) {
+  const gradients = section.querySelectorAll("[data-scroll-gradient]");
+  const gradient = gradients[0];
+  if (!gradient) return;
+
+  const radiusX = Math.max(
+    0,
+    (section.clientWidth - gradient.offsetWidth) / 2
+  );
+  const radiusY = Math.max(
+    0,
+    (section.clientHeight - gradient.offsetHeight) / 2
+  );
+  const offsetX = Math.cos(angle) * radiusX;
+  const offsetY = Math.sin(angle) * radiusY;
+
+  gradients.forEach((glow, index) => {
+    const direction = index === 0 ? 1 : -1;
+    glow.style.setProperty(
+      "--gradient-offset-x",
+      `${direction * offsetX}px`
+    );
+    glow.style.setProperty(
+      "--gradient-offset-y",
+      `${direction * offsetY}px`
+    );
+  });
+}
+
 export default function HomePage() {
   const mainRef = useRef(null);
+  const targetAngle = useRef(Math.PI);
+  const currentAngle = useRef(Math.PI);
+  const frameId = useRef(null);
+
+  const scheduleGradientPosition = useCallback(() => {
+    if (frameId.current !== null) return;
+
+    frameId.current = window.requestAnimationFrame(() => {
+      frameId.current = null;
+      const main = mainRef.current;
+      const aboutSection = main && main.querySelector("#about");
+      if (!aboutSection) return;
+
+      const { top, height } = aboutSection.getBoundingClientRect();
+      const progress = Math.min(
+        Math.max((window.innerHeight - top) / (window.innerHeight + height), 0),
+        1
+      );
+      const desiredAngle = targetAngle.current - progress * 0.2;
+      const difference = Math.atan2(
+        Math.sin(desiredAngle - currentAngle.current),
+        Math.cos(desiredAngle - currentAngle.current)
+      );
+      currentAngle.current += difference * 0.18;
+      positionGradientPair(aboutSection, currentAngle.current);
+
+      if (Math.abs(difference) > 0.001) scheduleGradientPosition();
+    });
+  }, []);
+
+  const handleGradientPointerMove = (event) => {
+    if (event.pointerType === "touch") return;
+
+    const { left, top, width, height } =
+      event.currentTarget.getBoundingClientRect();
+    if (!width || !height) return;
+
+    const pointerX = (event.clientX - left - width / 2) / (width / 2);
+    const pointerY = (event.clientY - top - height / 2) / (height / 2);
+    if (Math.hypot(pointerX, pointerY) < 0.08) return;
+
+    targetAngle.current = Math.atan2(pointerY, pointerX);
+    scheduleGradientPosition();
+  };
 
   useEffect(() => {
     const main = mainRef.current;
     if (!main) return;
 
-    const gradients = main.querySelectorAll("[data-scroll-gradient]");
     const aboutSection = main.querySelector("#about");
-    if (!gradients.length || !aboutSection) return;
+    if (!aboutSection?.querySelector("[data-scroll-gradient]")) return;
 
-    let frameId = null;
-    const updateGradientPosition = () => {
-      frameId = null;
-      const { top: sectionTop, height: sectionHeight } =
-        aboutSection.getBoundingClientRect();
-      const progress = Math.min(
-        Math.max(
-          (window.innerHeight - sectionTop) /
-            (window.innerHeight + sectionHeight),
-          0
-        ),
-        1
-      );
-
-      gradients.forEach((gradient, index) => {
-        const direction = index === 0 ? 1 : -1;
-        gradient.style.setProperty(
-          "--scroll-gradient-x",
-          `${direction * 120 * progress}px`
-        );
-        gradient.style.setProperty(
-          "--scroll-gradient-y",
-          `${direction * 100 * progress}px`
-        );
-      });
-    };
-
-    const scheduleGradientPosition = () => {
-      if (frameId === null) {
-        frameId = window.requestAnimationFrame(updateGradientPosition);
-      }
-    };
-
-    updateGradientPosition();
+    scheduleGradientPosition();
     window.addEventListener("scroll", scheduleGradientPosition, { passive: true });
     window.addEventListener("resize", scheduleGradientPosition);
 
     return () => {
       window.removeEventListener("scroll", scheduleGradientPosition);
       window.removeEventListener("resize", scheduleGradientPosition);
-      if (frameId !== null) window.cancelAnimationFrame(frameId);
-      gradients.forEach((gradient) => {
-        gradient.style.removeProperty("--scroll-gradient-x");
-        gradient.style.removeProperty("--scroll-gradient-y");
-      });
+      if (frameId.current !== null) window.cancelAnimationFrame(frameId.current);
+      frameId.current = null;
+      aboutSection
+        .querySelectorAll("[data-scroll-gradient]")
+        .forEach((gradient) => {
+          gradient.style.removeProperty("--gradient-offset-x");
+          gradient.style.removeProperty("--gradient-offset-y");
+        });
     };
-  }, []);
+  }, [scheduleGradientPosition]);
 
   useEffect(() => {
     const main = mainRef.current;
@@ -165,19 +207,23 @@ export default function HomePage() {
       </section>
 
     {/* About */}
-    <section id="about" className="relative isolate scroll-mt-20 bg-[#f5f5f5]">
+    <section
+      id="about"
+      className="relative isolate scroll-mt-20 bg-[#f5f5f5]"
+      onPointerMove={handleGradientPointerMove}
+    >
       {/* Background gradient */}
     <div className="
-      scroll-gradient pointer-events-none absolute left-[0%] top-1/2 z-0
-      h-[60vmin] w-[55vmin] rounded-full blur-2xl opacity-100
+      scroll-gradient pointer-events-none absolute left-1/2 top-1/2 z-0
+      h-[40vmin] w-[40vmin] rounded-full blur-2xl opacity-100
       bg-[radial-gradient(closest-side,rgba(255,122,122,0.5),rgba(255,122,122,0.22),transparent)]
     "
       data-scroll-gradient
     />
     {/* right purple/blue glow */}
     <div className="
-      scroll-gradient pointer-events-none absolute right-[0%] top-1/2 z-0
-      h-[60vmin] w-[55vmin] rounded-full blur-2xl opacity-100
+      scroll-gradient pointer-events-none absolute left-1/2 top-1/2 z-0
+      h-[40vmin] w-[40vmin] rounded-full blur-2xl opacity-100
       bg-[radial-gradient(closest-side,rgba(149,117,255,0.5),rgba(117,177,255,0.22),transparent)]
     "
       data-scroll-gradient
