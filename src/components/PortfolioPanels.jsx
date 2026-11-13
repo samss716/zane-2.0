@@ -15,7 +15,7 @@ export default function PortfolioPanels() {
       </div>
 
       {/* Grid */}
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-2">
         <Card
           imageSrc="/media/3dmodels/pendulum.png"
           title="3D Works & Animations"
