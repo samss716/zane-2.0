@@ -57,9 +57,9 @@ body {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); } /* because we’ll duplicate content 2x */
 }
-/* Respect reduced motion */
+/* Keep marquee motion slower when reduced motion is requested. */
 @media (prefers-reduced-motion: reduce) {
-  .marquee__track { animation: none !important; transform: none !important; }
+  .marquee { --speed: 56s; }
 }
 
 /* Diagonal panels: entrance animation */
