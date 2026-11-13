@@ -15,6 +15,57 @@ export default function HomePage() {
     const main = mainRef.current;
     if (
       !main ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const gradients = main.querySelectorAll("[data-scroll-gradient]");
+    const aboutSection = main.querySelector("#about");
+    if (!gradients.length || !aboutSection) return;
+
+    let frameId = null;
+    const updateRotation = () => {
+      frameId = null;
+      const { top: sectionTop, height: sectionHeight } =
+        aboutSection.getBoundingClientRect();
+      const progress = Math.min(
+        Math.max(
+          (window.innerHeight - sectionTop) /
+            (window.innerHeight + sectionHeight),
+          0
+        ),
+        1
+      );
+      const rotation = `${-25 * progress}deg`;
+
+      gradients.forEach((gradient) => {
+        gradient.style.rotate = rotation;
+      });
+    };
+
+    const scheduleRotation = () => {
+      if (frameId === null) {
+        frameId = window.requestAnimationFrame(updateRotation);
+      }
+    };
+
+    updateRotation();
+    window.addEventListener("scroll", scheduleRotation, { passive: true });
+    window.addEventListener("resize", scheduleRotation);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleRotation);
+      window.removeEventListener("resize", scheduleRotation);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      gradients.forEach((gradient) => gradient.style.removeProperty("rotate"));
+    };
+  }, []);
+
+  useEffect(() => {
+    const main = mainRef.current;
+    if (
+      !main ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
       !("IntersectionObserver" in window)
     ) {
@@ -42,7 +93,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    // pt-20 offsets your fixed Navbar
+    // pt-20 offsets fixed Navbar
     <main ref={mainRef} className="relative min-h-screen bg-[#f5f5f5] pt-20">
       {/* HERO */}
       <section
@@ -117,13 +168,17 @@ export default function HomePage() {
       absolute left-[0%] top-1/2 -translate-y-1/2
       h-[60vmin] w-[55vmin] rounded-full blur-2xl opacity-100
       bg-[radial-gradient(closest-side,rgba(255,122,122,0.35),rgba(255,122,122,0.12),transparent)]
-    " />
+    "
+      data-scroll-gradient
+    />
     {/* right purple/blue glow */}
     <div className="
       absolute right-[0%] top-1/2 -translate-y-1/2
       h-[60vmin] w-[55vmin] rounded-full blur-2xl opacity-100
       bg-[radial-gradient(closest-side,rgba(149,117,255,0.35),rgba(117,177,255,0.12),transparent)]
-    " />
+    "
+      data-scroll-gradient
+    />
 
   <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12 py-8 md:py-10">
 

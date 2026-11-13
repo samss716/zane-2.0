@@ -210,6 +210,10 @@ body {
     transform: none !important;
     opacity: 1 !important;
   }
+
+  [data-scroll-gradient] {
+    rotate: none !important;
+  }
 }
 
 /* Pink scrollbar for the traditional horizontal strip */
