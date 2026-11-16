@@ -324,7 +324,6 @@ export default function HomePage() {
           />
 </svg>
       </a>
-      {/*resume*/}
       {/* Resume */}
 <a
   href="/media/sam_z_sanchez_2026.pdf"
