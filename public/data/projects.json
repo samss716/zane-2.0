@@ -37,11 +37,29 @@
   },
   {
     "id": "p5",
+    "title": "fox",
+    "src": "/media/3dmodels/fox.mp4",
+    "description": "Low poly fox model with rigging and animation. Rendered with Eevee.",
+    "medium": "3D (video export)",
+    "year": "2023",
+    "collection": "3d"
+  },
+  {
+    "id": "p6",
     "title": "tree",
     "src": "/media/3dmodels/tree.png",
     "description": "Rendered with Eevee.",
     "medium": "3D (image)",
     "year": "2025",
+    "collection": "3d"
+  },
+  {
+    "id": "p7",
+    "title": "portafilter",
+    "src": "/media/3dmodels/portafilter.png", 
+    "description": "Rendered with Eevee; contributing piece to the espresso collection.",
+    "medium": "3D (image)",
+    "year": "2026",
     "collection": "3d"
   },
   {

@@ -20,14 +20,15 @@ section{padding:58px 0;border-top:1px solid var(--line)}
 h2{font:clamp(30px,4vw,48px)/1.05 var(--serif);font-weight:400;letter-spacing:-.035em;margin:0 0 12px}
 h3{font:23px var(--serif);font-weight:400;margin:0 0 8px}
 p{color:#b1b1af;margin:0 0 14px}.small{font-size:12px;color:var(--muted)}
-.preview-shell{background:#080908;border:1px solid var(--line);padding:12px;border-radius:3px}
-.preview-top{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:3px 4px 12px;color:var(--muted);font:11px var(--mono);text-transform:uppercase}
+.preview-shell{background:#080908;border:1px solid var(--line);padding:12px;border-radius:3px;color:#f5faf1}
+.preview-top{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:3px 4px 12px;color:#c3c9bd;font:11px var(--mono);text-transform:uppercase}
 canvas{width:100%;height:auto;aspect-ratio:16/9;display:block;background:#090a08;cursor:crosshair;touch-action:pan-y}
 .controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
-button{border:1px solid var(--line);background:var(--panel2);color:var(--ink);padding:9px 13px;font:11px var(--mono);text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+button{border:1px solid var(--line);background:var(--panel2);color:#f5faf1;padding:9px 13px;font:11px var(--mono);text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
 button:hover{border-color:var(--acid);color:var(--acid)}
-.status{margin-left:auto;color:var(--muted);font:11px var(--mono);align-self:center}
+.status{margin-left:auto;color:#c3c9bd;font:11px var(--mono);align-self:center}
 .channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.channel,.callout,.step{color:#f5faf1}
 .channel{background:var(--panel);border:1px solid var(--line);padding:12px;min-width:0}
 .channel label{display:block;font:11px var(--mono);color:var(--acid);margin-bottom:8px;overflow-wrap:anywhere}
 
@@ -41,16 +42,17 @@ button:hover{border-color:var(--acid);color:var(--acid)}
 .step p{font-size:14px}
 code,pre{font-family:var(--mono)}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0a0b09;border:1px solid var(--line);padding:20px;color:#dce5c8;font-size:12px;line-height:1.65;max-height:480px;overflow:auto}
 details{border-top:1px solid var(--line);padding:16px 0}summary{cursor:pointer;color:var(--acid);font:12px var(--mono);text-transform:uppercase}
-textarea{width:100%;min-height:100px;background:#0b0c0a;color:var(--ink);border:1px solid var(--line);padding:12px;font:13px/1.5 var(--mono)}
+textarea{width:100%;min-height:100px;background:#0b0c0a;color:#f5faf1;border:1px solid var(--line);padding:12px;font:13px/1.5 var(--mono)}
 footer{padding:35px 0 45px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font:11px var(--mono);text-transform:uppercase}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:55px}.section-head{grid-template-columns:1fr;gap:8px}.channel-grid,.grid2,.steps{grid-template-columns:1fr}.status{width:100%;margin:5px 0}footer{display:block}footer span{display:block;margin:8px 0}}
-html.preview-mode,html.preview-mode body{width:100%;margin:0;background:#101010;overflow:hidden}
-html.preview-mode body>header,html.preview-mode main>.hero,html.preview-mode main>section:not(#preview){display:none}
+html.preview-mode,html.preview-mode body{width:100%;height:100%;margin:0;background:#101010;overflow:hidden}
+html.preview-mode body>header,html.preview-mode body>footer,html.preview-mode main>.hero,html.preview-mode main>section:not(#preview){display:none}
 html.preview-mode main.wrap,html.preview-mode .wrap{width:100%;margin:0}
 html.preview-mode #preview{padding:0;border:0}
 html.preview-mode #preview .section-head{display:block;margin:0}
 html.preview-mode #preview .num,html.preview-mode #preview .preview-top,html.preview-mode #preview .channel-grid,html.preview-mode #preview .controls{display:none}
 html.preview-mode #preview .preview-shell{padding:0;border:0;background:transparent}
+html.preview-mode #preview canvas{width:100vw;height:100vh;aspect-ratio:auto}
 </style>
 <style>html, body, #root {
       margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;
@@ -944,7 +946,4 @@ html[data-visualize-page-inline-inset] > body { padding-inline: var(--page-conte
   reportHeight();
 })();
 </script>
-<style id="codex-visualization-document-scrollbar">html,body{scrollbar-width:none!important}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none!important}</style>
-
-
 </body></html>
