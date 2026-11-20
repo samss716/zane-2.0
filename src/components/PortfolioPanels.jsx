@@ -47,7 +47,7 @@ function Card({ title, imageSrc, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="group relative w-full h-64 rounded-2xl overflow-hidden border border-black/10"
+      className="group relative w-full h-64 rounded-2xl overflow-hidden border"
     >
       <img
         src={imageSrc}
