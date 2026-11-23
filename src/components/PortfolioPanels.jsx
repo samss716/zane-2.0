@@ -47,7 +47,7 @@ function Card({ title, imageSrc, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="group relative w-full h-64 rounded-2xl overflow-hidden border"
+      className="port-card group relative w-full h-64 rounded-2xl overflow-hidden"
     >
       <img
         src={imageSrc}

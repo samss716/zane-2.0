@@ -262,4 +262,23 @@ body {
   background: #e591ac;
 }
 
+.port-card {
+      background: #191919;
+      border: 1px solid #303030;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.25s,
+                  border-color 0.25s;
+    }
+
+    .port-card:hover,
+    .port-card:focus-within {
+      transform: translateY(-5px);
+      border-color: transparent;
+      background:
+        linear-gradient(#191919, #191919) padding-box,
+        linear-gradient(135deg, #e591ac, #a45bcb, #e591ac) border-box;
+      background-size: auto, 200% 200%;
+      animation: shader-border-flow 3s linear infinite;
+    }
 
