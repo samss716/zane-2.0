@@ -263,22 +263,36 @@ body {
 }
 
 .port-card {
-      background: #191919;
-      border: 1px solid #303030;
-      overflow: hidden;
-      position: relative;
-      transition: transform 0.25s,
-                  border-color 0.25s;
-    }
+  background: #191919;
+  border: 1.5px solid #303030;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
 
-    .port-card:hover,
-    .port-card:focus-within {
-      transform: translateY(-5px);
-      border-color: transparent;
-      background:
-        linear-gradient(#191919, #191919) padding-box,
-        linear-gradient(135deg, #e591ac, #a45bcb, #e591ac) border-box;
-      background-size: auto, 200% 200%;
-      animation: shader-border-flow 3s linear infinite;
-    }
+  transition:
+    transform 0.25s,
+    border-color 0.25s;
+}
 
+.port-card:hover,
+.port-card:focus-visible {
+  transform: translateY(-5px);
+
+  border-color: transparent;
+
+  background:
+    linear-gradient(#191919, #191919) padding-box,
+    linear-gradient(135deg, #ffa2e8, #a964d7, #ffa2e8) border-box;
+
+  background-size: auto, 200% 200%;
+  animation: shader-border-flow 7s ease-in-out infinite;
+}
+
+@keyframes shader-border-flow {
+  0% {
+    background-position: 0 0, 0% 50%;
+  }
+  100% {
+    background-position: 0 0, 200% 50%;
+  }
+}
