@@ -6,13 +6,12 @@ import Counter from "../../components/Counter";
 export default function BookClubCaseStudy() {
   return (
     <main className="min-h-screen bg-white pt-20">
-      <CaseStudyHero
-        eyebrow="Case Study"
-        title="RoundTbl"
-        subtitle="Designing a more social and intuitive reading experience created for book lovers and discussion enthusiasts."
-        image="/media/web/rndtbl/rndtbl.png"
-      />
-
+  <CaseStudyHero
+    eyebrow="Case Study"
+    title="RoundTbl"
+    subtitle="Designing a more social and intuitive reading experience created for book lovers and discussion enthusiasts."
+    video="/media/web/rndtbl/book-club.mp4"
+  />
       <CaseStudySectionNav
         items={[
           { label: "Context", href: "#context" },

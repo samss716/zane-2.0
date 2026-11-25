@@ -3,17 +3,28 @@ export default function CaseStudyHero({
   title,
   subtitle,
   image,
+  video,
 }) {
   return (
     <section className="relative isolate flex min-h-[42vh] items-end overflow-hidden bg-[#f5f5f5]">
-      {image && (
+      {video ? (
+        <video
+          src={video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+        />
+      ) : image ? (
         <img
           src={image}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 z-0 h-full w-full object-cover"
         />
-      )}
+      ) : null}
 
       <div className="absolute inset-0 z-[1] bg-black/35" />
 
